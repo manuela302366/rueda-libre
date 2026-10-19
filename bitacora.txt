@@ -1,0 +1,20 @@
+la URL completa, el protocolo, el host, el puerto, 
+la ruta, el método de la petición y el código de estado.
+
+Petición 1
+URL completa: http://127.0.0.1:5500/
+Protocolo: http
+Host:127.0.0.1
+Puerto:5500
+Ruta:/
+Metodo de peticion:GET
+codigo de estado:304 Not Modified
+
+
+Petición 2
+URL completa: http://127.0.0.1:5500/promociones.html
+codigo de estado: 404 Not Found 
+
+html: estructura  <p>Bienvenido a Rueda Libre</p>
+css: diseño  .verde { color: green; }
+JavaScript Funcionalidad de la pagina console.log("hola mundo")

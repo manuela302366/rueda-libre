@@ -18,3 +18,11 @@ codigo de estado: 404 Not Found
 html: estructura  <p>Bienvenido a Rueda Libre</p>
 css: diseño  .verde { color: green; }
 JavaScript Funcionalidad de la pagina console.log("hola mundo")
+
+Origen                           Destino    Ruta que escribí
+index.html                       Tarifas    pagina/tarifas.html 
+index.html                       Reservas   pagina/reservas.html
+paginas/tarifas.html             inicio     ../index.html
+paginas/tarifas.html             Reservas   reservas.html
+paginas/reservas.html            inicio     ../index.html
+paginas/reservas.html            Tarifas    tarifas.html

@@ -21,32 +21,40 @@
     <section>
         <h2>Formulario de reserva</h2>
 
-       <form action="#" method="post">
 
     <!-- _Grupo1: Tus datos-->
      <fieldset>
 <legend>Tus datos</legend>
+
 <div>
 <label for="Nombre">Nombre completo</label>
-<input type="text" id="nombre" name="nombre" required>
+<input type="text" id="nombre" name="nombre" required minlength="3" >
 </div>
 
 <div>
-<label for="Documento">Numero de Documento</label>
-<input type="text" id="Documento" name="Documento" required>
+<label for="Documento">Numero de documento</label>
+<input type="text" id="Documento" name="Documento" required
+pattern="[0,9]{6,10}"
+inputmode="numeric"
+title="solo números, entre 6 y 10 digitos">
+<small>Solo numeros, de 6 a 10 digitos</small>
 </div>
 
 
 <div>
-<label for="email">Correo electrónico</label>
-<input type="email" id="email" name="email" required>
+<label for="Correo">Correo electrónico</label>
+<input type="email" id="correo" name="correo" required placeholder="ejemplo@Correo.com">
 </div>
 
 <div>
 <label for="celular">Celular</label>
-<input type="tel"  id="celular" name="celular" required>
+<input type="tel"  id="celular" name="celular" required
+pattern="3[0,9]{10}"
+maxlength="10"
+inputmode="numeric"
+title="Debe tener 10 digitos y empezar por 3">
+<small> Debe tener 10 digitos y empezar por 3</small>
 </div>
-
      </fieldset>
 
 
@@ -55,66 +63,66 @@
 <fieldset>
 <legend>Tu alquiler</legend>
 <div> 
-  <p>Tipo de bicicleta</p>
-  <label for="bicicleta-montaña">
-    <input type ="radio" id="bibicleta-montaña" name="tipo de bicicleta" value="montaña">Montaña 
-</label>
-  
-   <label for="bicicleta-electrica">
-    <input type ="radio" id="bibicleta-electrica" name="tipo de bicicleta" value="electrica">Electrica
-</label>
+ 
+  <label for="fecha">Fecha de alquiler </label> 
+    <input type ="date" id="fecha" name="fecha" required>
+    </div>
+ 
+     <p>Tipo de bicicleta</p>
 
+<div>
+   <label><input type="radio" id="bicicleta urbana" name="tipo de bicicleta" value="urbana" required>Urbana</label>
+   <label><input type="radio" id="bicicleta Montaña" name="tipo de bicicleta" value="Montaña" required>Montaña<label>
+    <label><input type="radio" id="bicicleta electrica" name="tipo de bicicleta" value="electrica" required>electrica</label>
+</div>
 
-   <label for="bicicleta-urbana">
-    <input type ="radio" id="bibicleta-urbana" name="tipo de bicicleta" value="urbana">Urbana
-</label>
+<div>
+    <p>plan</p>
+<label><input type="radio" id="plan 1h" name="tipo de bicicleta" value="1h" required>1h</label>
+   <label><input type="radio" id="Medio dia" name="tipo de bicicleta" value="medio dia" required>Medio día<label>
+    <label><input type="radio" id="bdia completo" name="tipo de bicicleta" value="dia completo" required>Día completo</label>
 </div>
 <br>
 <div>
-   <label for="fecha">Fecha de alquiler</label>
-   <input type="date" id="fecha" name="Fecha">
-   </div>
-
-<div>
-<label for="horas"> Número de horas</label>
-<input type="number"  id="horas" name="horas" min="1" max="12">
-</div>
-
-<div>
-  <label for="Lugar">Lugar del recorrido</label>
-  <select id="sede" name="sede">
-    
-
-<option value=""selecciona el recorrido></option>
-<option value="Río y parques">Río y parques</option>
-<option value="Sabore de barrio">Sabores de barrio</option>
-<option value="reto las Palmas">Reto las Palmas</option>
-  </select>
+<label for="cantidad">Cantidad de bicicletas</label>
+<input type="number" id=cantidad name="cantidad" required min="1" max="6">
 </div>
 <br>
- <div>
-<label for="comentarios">comentarios</label>
-<textarea name="comentarios" id="comentarios" rows="4"></textarea>
+<div>
+<label for="recorrido">Recorrido guiado</label>
+<select id="recorrido" name="recorrido">
+  <option value="ninguno">ninguno</option>
+<option value="rio y parques">Río y parques</option>
+<option value="sabore de barrio">Sabores de barrio</option>
+<option value="Reto las palmas">Reto Las Palmas</option>
+
+</select>
 </div>
 </fieldset>
 
-    <!-- Grupo3: Confirmación-->
+
+  <!-- Grupo3: Confirmación-->
      <fieldset>
       <legend>Confirmación</legend>
+     
+<br>
+ <div>
+<label for="comentarios">comentarios</label>
+<textarea name="comentarios" id="comentarios" maxlen="300 "rows="4" placeholder="Máximo 300 caracteres"></textarea>
+</div>
 
-      
-<label for="terminos">
-<input type="checkbox" id="terminos" name="terminos" value="aceptar">
-Acepto los términos y condiciones
-</label>
-      </div>
-     </fieldset>
+   <div>
+<label for="politicas">
+  <input type="checkbox" id="politicas" name="politica" required>
+  Acepto las politicas de alquiler
+ </label>
+ </div>
+</fieldset>
 
     <button type="submit">Reservar ahora</button>
 
-</section>
 </form>
- 
+ </section>
     <h3>Reserva tu bicicleta</h3>
 
     <p>

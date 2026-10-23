@@ -26,3 +26,12 @@ paginas/tarifas.html             inicio     ../index.html
 paginas/tarifas.html             Reservas   reservas.html
 paginas/reservas.html            inicio     ../index.html
 paginas/reservas.html            Tarifas    tarifas.html
+
+Justificacion de las elecciones  para las casillas de selección
+*email: type ="email" no text poruqe email valida que tenga el @ y .comp
+
+*Teléfono: type="tel" para que se abra el teclado numérico
+
+*Fecha: type="date" para que abra el calendario
+
+*tipo de bici: type="radio"

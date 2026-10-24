@@ -35,3 +35,78 @@ Justificacion de las elecciones  para las casillas de selección
 *Fecha: type="date" para que abra el calendario
 
 *tipo de bici: type="radio"
+
+
+Tabla de pruebas
+Dato de prueba       Resultado esperado              Resultado obtenido
+Nombre (vacio)       No permite enviar               No permite enviar          
+                     porque es obligatorio           porque es obligatorio  
+
+correo electrónico   Rechaza el correo porque        Rechaza el correo porque
+(123)                no tiene un formato válido      no tiene un formato válido     
+
+Documento            Rechaza las letras porque       Rechaza las letras porque 
+(abs123)             solo se permiten números        solo se permiten números
+
+Celular              Rechaza el numero porque        Rechaza el numero porque 
+2153                 no tiene 10 digitos             no tiene 10 digitos
+
+Fecha 02/10/2026     Rechaza la fecha porque esta    Rechaza la fecha porque esta    
+                     fuera del rango permitido       fuera del rango permitido         
+
+Cantidad de          Rechaza el valor porque el      Rechaza el valor porque
+bicicletas (9)       máximo son 6                    máximo son 6              
+
+
+Politica de          No deja avanzar porque es       No deja avanzar porque es
+alquiler             una casilla obligatoria         una casilla obligatoria
+
+Documento            Rechaza porque tiene            Rechaza porque tiene
+(25469)              menos de 6 digitos              menos de 6 digitos
+
+Prueba contraste 1
+texto blanco #FFFFFF sobre verde ruta #1E7A4F 5.31:1 Apto para texto normal
+ 
+prueba contraste 2 
+blanco #FFFFFF sobre naranja pedal #F39A2B 2.21:1  No apta
+
+prueba 3
+azul noche #14213D sobre naranja pedal #F39A2B  7.2:1 Apta para texto normal
+
+prueba 4
+azul noche #14213D sobre crema #FAF6EF 14.82:1 apta para texto normal
+
+prueba 5
+gris asfalto #5B6470 sobre crema #FAF6EF 5.56:1 Apta para texto normal
+
+prueba 6
+verde ruta #1E7A4F sobre crema #FAF6EF 4.93:1 Apto para texto normal
+
+prueba 7
+naranja pedal #F39A2B sobre crema #FAF6EF 2.05:1 No apta
+
+prueba 8
+blanco #FFFFFF sobre azul noche #14213D  15.97:1 Apta para texto normal
+
+Mapa de uso de colores
+-No aptas (no usar para texto) 
+blanco #FFFFFF sobre naranja pedal #F39A2B 2.21:1  No apta
+naranja pedal #F39A2B sobre crema #FAF6EF 2.05:1 No apta
+
+-Texto y titulos
+azul noche #14213D sobre crema #FAF6EF 14.82:1 apta para texto normal
+gris asfalto #5B6470 sobre crema #FAF6EF 5.56:1 Apta para texto normal
+
+-Botón primario
+texto blanco #FFFFFF sobre verde ruta #1E7A4F 5.31:1 Apto para texto normal
+
+-Botón secundario/destacados
+azul noche #14213D sobre naranja pedal #F39A2B  7.2:1 Apta para texto normal
+no usar texto blanco sobre #f39a2b, usar texto oscuro
+
+-Enlaces
+verde ruta #1E7A4F sobre crema #FAF6EF 4.93:1 Apto para texto normal
+
+-Header/footer
+blanco #FFFFFF sobre azul noche #14213D  15.97:1 Apta para texto normal
+

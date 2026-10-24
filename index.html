@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <h1>Rueda Libre</h1>
       <nav>
-        <ul>
+        <ul id="menu">
+          <li><a href="index.html" class="activo">Inicio</a></li>
           <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
           <li><a href="paginas/reservas.html">Reservas</a></li>
         </ul>
@@ -36,22 +39,33 @@
       <img
         src="./img/bicicleta.jpg"
         alt="bicicletas de Rueda Libre"
-        width="400"
-      />
-      <section>
-      <h2>Nuestros Servicios</h2>
-      <article>
-      <p>
-        En Rueda Libre, ofrecemos una variedad de servicios para satisfacer tus
-        necesidades de movilidad:
-      </p>
-      <ul>
-        <li>Alquiler de bicicletas por horas o días</li>
-        <strong>Incluye casco y candado</strong>
-        <li>Recorridos guiados</li>
-        <a href="paginas/tarifas.html#recorridos">Ver tarifas</a>
-        <li>Taller básico</li>
-      </ul>
+        width="400">
+      
+<main>
+  <section id="inicio">
+    <h2>Nuestros Servicios</h2>
+    <p>En Rueda Libre, ofrecemos una variedad de servicios para satisface tus necesidades de movilidad:</p>
+
+    <div class="servicios">
+      <article class="servicio">
+        <img src="img/alquiler.jpg" alt="Alquiler" width="400"/>
+        <h3>Alquiler por horas o días</h3>
+        <p>Incluye casco y candado.</p>
+      </article>
+
+      <article class="servicio">
+        <img src="img/ciclista.jpg" alt="Recorridos">
+        <h3>Recorridos guiados</h3>
+        <p>Conoce la ciudad. <a href="paginas/tarifas.html">Ver tarifas</a></p>
+      </article>
+
+      <article class="servicio">
+        <img src="img/taller.jpg" alt="Taller">
+        <h3>Taller básico</h3>
+        <p>Mantenimiento rápido.</p>
+      </article>
+    </div>
+    </section>
 
       <h3>¿cómo alquilar?</h3>
       <p>Para alquilar una bicicleta, simplemente:</p>
@@ -68,9 +82,9 @@
 </section>
       <br />
 
-      <a href="paginas/reservas.html">Reserva ahora</a>
+      <a href="paginas/reservas.html" class="btn-reserva">Reservar ahora</a>
       <br />
-      <img src="./img/rutas.avif" alt="bicicletas de Rueda Libre" width="400" />
+      <img src="./img/encuentra.jpg" alt="bicicletas de Rueda Libre" width="100" />
 
       <h3>Encuéntranos</h3>
       <p id="encuentranos">Ubicación</p>

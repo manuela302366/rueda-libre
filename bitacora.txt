@@ -111,3 +111,16 @@ verde ruta #1E7A4F sobre crema #FAF6EF 4.93:1 Apto para texto normal
 blanco #FFFFFF sobre azul noche #14213D  15.97:1 Apta para texto normal
 
 https://manuela302366.github.io/rueda-libre/
+
+comprobado en devtools-styles y computed
+Inspeccione el parrafo <p> Alquiler de bicicletas y recorridos guiados por medellín</p> en index.html
+Propiedad que si hereda
+color y font-family
+En Devtools-styles se ve en la seccion Inherited from body que el p recibe el color var(--azul-noche) y font-family: var(--fuentes-texto) del body.No tiene color propio, lo hereda
+
+propiedad que no se hereda
+background-color y padding/margin
+el body tiene  background-color:
+var(--crema) pero el p no lo hereda como color solido, en computed aparece transparente.
+
+

@@ -1,3 +1,81 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/* --- PASO 1 --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- PASO 2 --- */
+main {
+  max-width: 75rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inicio {
+  min-height: 40vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- PASO 3: TARJETAS --- */
+.servicios {
+  display: block; /* por ahora en columna, sin flex raro */
+}
+
+.servicio {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+}
+
+.servicio img {
+  width: 100%;
+  height: 220px; /*controlamos la altura*/
+  object-fit: cover; /*para que la imagen se recorte y no se deforme*/
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* PASO 4: TABLAS - lectura, relleno, bordes y encabezado marca */
+.tabla,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.tabla th,
+.tabla td,
+table th,
+table td {
+  padding: 1rem; /* relleno en rem - OBLIGATORIO */
+  border: 1px solid #ccc; /* borde en px - OBLIGATORIO */
+  text-align: left;
+}
+
+.tabla thead th,
+table thead th {
+  background-color: #0d2a54; /* fondo de marca - azul oscuro */
+  color: #ffffff; /* blanco para contraste AAA */
+  font-weight: bold;
+}
+
+.tabla tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: #f2f6ff;
+}
+
+
 :root{
     --verde-ruta: #1E7A4F;
     --naranja-pedal: #F39A2B;
@@ -77,4 +155,61 @@ nav ul{
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
+    }
+
+    button, .btn{
+        background-color: var(--verde-ruta);
+        color: white;   
+        padding: var(--espacios-sm) var(--espacios-md);
+        border: none;   
+        border-radius: 6px;
+    }
+    button:hover,{
+        background-color: var(--naranja-pedal);
+        
+    }
+    /*paso 1 SOSA 4*/
+    #menu a {
+        color: var(--gris-asfalto);
+       
+    }
+    #menu a.activo{
+        color: var(--verde-ruta);
+        font-weight: 600; 
+    }
+    /*paso 4 -hover y focus menú*/
+    #menu a:hover{
+        color: var(--naranja-pedal);
+        text-decoration: underline;
+    }
+    #menu a:focus{
+        color: var(--naranja-pedal);
+        outline: 2px solid var(--naranja-pedal);
+        outline-offset: 3px;
+    }
+    /* paso 5 -botón Reservar ahora*/
+    .btn-reserva{
+        background-color: var(--verde-ruta);
+        color: var(--crema);
+        padding: 0.7em 1.4em;
+        border: radius: 999px;
+       text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .btn-reserva:hover{
+        background-color: var(--naranja-pedal);
+        color: var(--azul-noche);
+    }
+    .btn-reserva:focus{
+     outline: 3px solid var(--azul-noche);
+     outline-offset: 3px;
+    }
+    /* paso 6 -foco formulario*/
+    input:focus,
+    select:focus,
+    textarea:focus{
+        outline: 2px solid var(--verde-ruta);
+        outline-offset: 2px;
+        border-color: var(--verde-ruta);
     }

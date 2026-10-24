@@ -13,7 +13,7 @@
       <nav>
         <ul>
           <li><a href="tarifas.html">Tarifas y rutas</a></li>
-          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="../index.html">Inicio</a></li>
         </ul>
       </nav>
     </header>
@@ -21,20 +21,20 @@
     <section>
         <h2>Formulario de reserva</h2>
 
-
+<form action="#" method="post">
     <!-- _Grupo1: Tus datos-->
      <fieldset>
 <legend>Tus datos</legend>
 
 <div>
-<label for="Nombre">Nombre completo</label>
+<label for="nombre">Nombre completo</label>
 <input type="text" id="nombre" name="nombre" required minlength="3" >
 </div>
 
 <div>
-<label for="Documento">Numero de documento</label>
-<input type="text" id="Documento" name="Documento" required
-pattern="[0,9]{6,10}"
+<label for="documento">Numero de documento</label>
+<input type="text" id="documento" name="documento" required
+pattern="[0-9]{6,10}"
 inputmode="numeric"
 title="solo números, entre 6 y 10 digitos">
 <small>Solo numeros, de 6 a 10 digitos</small>
@@ -42,14 +42,14 @@ title="solo números, entre 6 y 10 digitos">
 
 
 <div>
-<label for="Correo">Correo electrónico</label>
+<label for="correo">Correo electrónico</label>
 <input type="email" id="correo" name="correo" required placeholder="ejemplo@Correo.com">
 </div>
 
 <div>
 <label for="celular">Celular</label>
 <input type="tel"  id="celular" name="celular" required
-pattern="3[0,9]{10}"
+pattern="3[0-9]{9}"
 maxlength="10"
 inputmode="numeric"
 title="Debe tener 10 digitos y empezar por 3">
@@ -65,27 +65,27 @@ title="Debe tener 10 digitos y empezar por 3">
 <div> 
  
   <label for="fecha">Fecha de alquiler </label> 
-    <input type ="date" id="fecha" name="fecha" required>
+    <input type ="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
     </div>
  
      <p>Tipo de bicicleta</p>
 
 <div>
    <label><input type="radio" id="bicicleta urbana" name="tipo de bicicleta" value="urbana" required>Urbana</label>
-   <label><input type="radio" id="bicicleta Montaña" name="tipo de bicicleta" value="Montaña" required>Montaña<label>
-    <label><input type="radio" id="bicicleta electrica" name="tipo de bicicleta" value="electrica" required>electrica</label>
+   <label><input type="radio" id="bicicleta Montaña" name="tipo de bicicleta" value="Montaña">Montaña<label>
+    <label><input type="radio" id="bicicleta electrica" name="tipo de bicicleta" value="electrica">electrica</label>
 </div>
 
 <div>
     <p>plan</p>
-<label><input type="radio" id="plan 1h" name="tipo de bicicleta" value="1h" required>1h</label>
-   <label><input type="radio" id="Medio dia" name="tipo de bicicleta" value="medio dia" required>Medio día<label>
-    <label><input type="radio" id="bdia completo" name="tipo de bicicleta" value="dia completo" required>Día completo</label>
+<label><input type="radio" id="plan 1h" name="plan" value="1h" required>1 Hora</label>
+   <label><input type="radio" id="Medio dia" name="plan" value="medio dia">Medio día<label>
+    <label><input type="radio" id="bdia completo" name="plan" value="dia completo">Día completo</label>
 </div>
 <br>
 <div>
 <label for="cantidad">Cantidad de bicicletas</label>
-<input type="number" id=cantidad name="cantidad" required min="1" max="6">
+<input type="number" id=cantidad name="cantidad" required min="1" max="6" value="1">
 </div>
 <br>
 <div>
@@ -108,11 +108,11 @@ title="Debe tener 10 digitos y empezar por 3">
 <br>
  <div>
 <label for="comentarios">comentarios</label>
-<textarea name="comentarios" id="comentarios" maxlen="300 "rows="4" placeholder="Máximo 300 caracteres"></textarea>
+<textarea name="comentarios" id="comentarios" maxlength="300" rows="4" placeholder="Opcional, máximo 300 caracteres"></textarea>
 </div>
-
+<br>
    <div>
-<label for="politicas">
+<label for="politicas"> </label>
   <input type="checkbox" id="politicas" name="politica" required>
   Acepto las politicas de alquiler
  </label>

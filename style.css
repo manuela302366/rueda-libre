@@ -1,0 +1,21 @@
+:root{
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #FAF6EF;
+    --gris-asfalto: #5B6470;
+}
+ body{
+    background-color: var(--crema);
+    color: var(--azul-noche);
+ }
+
+ .boton-primario{
+    background-color: var(--verde-ruta);
+    color: white;
+}
+
+.boton-secundario{
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+}

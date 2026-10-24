@@ -213,3 +213,103 @@ nav ul{
         outline-offset: 2px;
         border-color: var(--verde-ruta);
     }
+    /* PASO 5: FORMULARIO - etiqueta sobre campo, ancho completo, separación y botón generoso */
+form {
+  max-width: 35rem;
+  margin: 2rem auto;
+}
+
+form .campo,
+form div,
+form p {
+  margin-bottom: 1.5rem; /* separación entre grupos */
+}
+
+form label {
+  display: block; /* etiqueta SOBRE su campo */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%; /* a todo el ancho disponible */
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+form button,
+form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem; /* relleno generoso */
+  background-color: #2a5db0; /* color marca */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+/* PASO 6: MENÚ EN FILA */
+nav ul {
+  display: flex; /* valor adecuado para fila */
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  display: inline-block; /* alternativa válida */
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  color: #0d2a54;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #2a5db0;
+  text-decoration: underline;
+}
+* { box-sizing: border-box; }
+
+.celda-electrica{
+  position: relative;
+}
+.celda-electrica{
+  position: relative;
+  padding-right: 60px; /* deja espacio para que no tape */
+}
+.etiqueta-nuevo{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #2a5db0;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.65rem;
+}
+.whatsapp{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+}
+footer{
+  margin-bottom: 80px;
+}

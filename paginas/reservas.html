@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarifas y rutas - Rueda Libre</title>
+    <title>Reserva tu bicicleta - Rueda Libre</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
@@ -11,119 +11,143 @@
   </head>
 
   <body>
-    <!-- enlace flotante de whatsapp -->
+    <!-- boton flotante para contacto rapido -->
     <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
 
-    <!-- menu de navegacion -->
+    <!-- cabecera compartida con el menu activo en reservas -->
     <header id="cabecera">
       <h1>Rueda Libre</h1>
       <nav>
         <ul id="menu">
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="tarifas.html" class="activo">Tarifas y rutas</a></li>
-          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="tarifas.html">Tarifas y rutas</a></li>
+          <li><a href="reservas.html" class="activo">Reservas</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <!-- seccion principal con la tabla de precios por tipo de bici -->
-      <section>
-        <img src="../img/images.jpeg" alt="Logo de Rueda Libre" width="400" />
-        <h2>Tarifas</h2>
-        <p>Descubre nuestras tarifas competitivas para el alquiler de bicicletas en Medellín.</p>
+      <!-- PASO 3: Layout de reservas en proporción 2:1 (Formulario e información lateral) -->
+      <div class="reservas-layout">
+        
+        <!-- Columna 1: El formulario (ocupa 2 partes / dos tercios) -->
+        <section class="seccion-formulario">
+          <h2>Formulario de reserva</h2>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Tipo de bicicleta</th>
-              <th>1 hora</th>
-              <th>Medio día (4h)</th>
-              <th>Día completo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Urbana</td>
-              <td>$10.000</td>
-              <td>$30.000</td>
-              <td>$50.000</td>
-            </tr>
-            <tr>
-              <td>Montaña</td>
-              <td>$15.000</td>
-              <td>$45.000</td>
-              <td>$70.000</td>
-            </tr>
-            <tr>
-              <td class="celda-electrica">
-                Eléctrica <span class="etiqueta-nuevo">Nuevo</span>
-              </td>
-              <td>$25.000</td>
-              <td>$70.000</td>
-              <td>$110.000</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+          <form action="#" method="post">
+            
+            <!-- PRIMER BLOQUE: Datos personales del cliente -->
+            <fieldset>
+              <legend>Tus datos</legend>
 
-      <!-- PASO 2: Galería "Nuestras rutas" con tres tarjetas en una sola fila -->
-      <section id="recorridos">
-        <h2>Nuestras rutas guiadas</h2>
-        <p>Explora Medellín y sus alrededores con nuestros recorridos especializados:</p>
+              <div>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3">
+              </div>
 
-        <div class="galeria-rutas">
-          <!-- Tarjeta de ruta 1 -->
-          <article class="tarjeta-ruta">
-            <img src="../img/ciclista.jpg" alt="Río y parques">
-            <h3>Río y parques</h3>
-            <p><strong>Distancia:</strong> 12 km</p>
-            <p><strong>Duración:</strong> 2h | <strong>Nivel:</strong> Fácil</p>
-            <p class="precio">$45.000</p>
-            <a href="reservas.html" class="btn-reserva">Reservar ruta</a>
-          </article>
+              <div>
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+              </div>
 
-          <!-- Tarjeta de ruta 2 -->
-          <article class="tarjeta-ruta">
-            <img src="../img/taller.jpg" alt="Sabores de barrio">
-            <h3>Sabores de barrio</h3>
-            <p><strong>Distancia:</strong> 18 km</p>
-            <p><strong>Duración:</strong> 3h | <strong>Nivel:</strong> Medio</p>
-            <p class="precio">$60.000</p>
-            <a href="reservas.html" class="btn-reserva">Reservar ruta</a>
-          </article>
+              <!-- PASO 4: Dos campos cortos relacionados en la misma fila usando Flexbox -->
+              <div class="fila-campos">
+                <div class="campo-corto">
+                  <label for="documento">Número de documento</label>
+                  <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" inputmode="numeric" title="Solo números, entre 6 y 10 dígitos">
+                  <small>6 a 10 dígitos</small>
+                </div>
 
-          <!-- Tarjeta de ruta 3 -->
-          <article class="tarjeta-ruta">
-            <img src="../img/encuentra.jpg" alt="Reto Las Palmas">
-            <h3>Reto Las Palmas</h3>
-            <p><strong>Distancia:</strong> 25 km</p>
-            <p><strong>Duración:</strong> 4h | <strong>Nivel:</strong> Difícil</p>
-            <p class="precio">$85.000</p>
-            <a href="reservas.html" class="btn-reserva">Reservar ruta</a>
-          </article>
-        </div>
-      </section>
+                <div class="campo-corto">
+                  <label for="celular">Celular</label>
+                  <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" maxlength="10" inputmode="numeric" title="Debe tener 10 dígitos y empezar por 3">
+                  <small>Empieza por 3</small>
+                </div>
+              </div>
+            </fieldset>
 
-      <br />
-      <p>
-        Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a.m.
-      </p>
+            <!-- SEGUNDO BLOQUE: Eleccion de la bicicleta, fechas y planes -->
+            <fieldset>
+              <legend>Tu alquiler</legend>
+              <div> 
+                <label for="fecha">Fecha de alquiler</label> 
+                <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
+              </div>
+               
+              <p>Tipo de bicicleta</p>
+              <div>
+                <label><input type="radio" id="bici-urbana" name="tipo_bicicleta" value="urbana" required> Urbana</label>
+                <label><input type="radio" id="bici-montana" name="tipo_bicicleta" value="montana"> Montaña</label>
+                <label><input type="radio" id="bici-electrica" name="tipo_bicicleta" value="electrica"> Eléctrica</label>
+              </div>
 
-      <!-- listado de recomendaciones para los tours -->
-      <aside>
-        <h3>Qué Llevar:</h3>
-        <ul>
-          <li>Ropa cómoda</li>
-          <li>Agua</li>
-          <li>Protector solar</li>
-          <li>Documento de identidad</li>
-        </ul>
-      </aside>
+              <div>
+                <p>Plan</p>
+                <label><input type="radio" id="plan-1h" name="plan" value="1h" required> 1 Hora</label>
+                <label><input type="radio" id="plan-medio" name="plan" value="medio_dia"> Medio día</label>
+                <label><input type="radio" id="plan-completo" name="plan" value="dia_completo"> Día completo</label>
+              </div>
+              <br>
+              
+              <div>
+                <label for="cantidad">Cantidad de bicicletas</label>
+                <input type="number" id="cantidad" name="cantidad" required min="1" max="6" value="1">
+              </div>
+              <br>
+              
+              <div>
+                <label for="recorrido">Recorrido guiado</label>
+                <select id="recorrido" name="recorrido">
+                  <option value="ninguno">Ninguno</option>
+                  <option value="rio y parques">Río y parques</option>
+                  <option value="sabores de barrio">Sabores de barrio</option>
+                  <option value="reto las palmas">Reto Las Palmas</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <!-- TERCER BLOQUE: Notas extra y aceptacion de politicas -->
+            <fieldset>
+              <legend>Confirmación</legend>
+              <br>
+              <div>
+                <label for="comentarios">Comentarios</label>
+                <textarea name="comentarios" id="comentarios" maxlength="300" rows="4" placeholder="Opcional, máximo 300 caracteres"></textarea>
+              </div>
+              <br>
+              
+              <div>
+                <label>
+                  <input type="checkbox" id="politicas" name="politica" required>
+                  Acepto las políticas de alquiler
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- boton para enviar los datos del form -->
+            <button type="submit" class="btn-reserva">Reservar ahora</button>
+          </form>
+        </section>
+
+        <!-- Columna 2: Información de contacto y ayuda (ocupa 1 parte / un tercio) -->
+        <aside class="lateral-contacto">
+          <h3>¿Necesitas ayuda?</h3>
+          <p>Si tienes dudas con tu reserva o necesitas un plan corporativo, comunícate con nosotros:</p>
+          <ul>
+            <li><strong>WhatsApp:</strong> +57 320 000 0</li>
+            <li><strong>Correo:</strong> hola@ruedalibre.example</li>
+            <li><strong>Ubicación:</strong> Medellín, Antioquia</li>
+          </ul>
+          <br>
+          <h3>Políticas rápidas</h3>
+          <p>El alquiler incluye casco, candado e inducción básica de seguridad de 5 minutos antes de rodar por las ciclorrutas.</p>
+        </aside>
+
+      </div>
     </main>
 
-    <hr />
-    
+    <hr>
+
     <!-- Pie de página unificado en tres columnas -->
     <footer id="pie">
       <div>

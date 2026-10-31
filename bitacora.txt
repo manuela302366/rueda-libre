@@ -150,3 +150,17 @@ Registro de Decisiones Técnicas (Layout en Dos Dimensiones - Grid y Flexbox):
 6. Pie de página (Footer / #pie):
 - Herramienta utilizada: CSS Grid (display: grid).
 - Justificación: Se estructuró mediante grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) para distribuir de forma automática y paralela los tres bloques informativos del footer en filas y columnas responsivas según el ancho de la pantalla.
+
+Registro de Problemas Responsive y Soluciones (Rueda Libre v1.5):
+
+1. Problema en vista móvil de 360 px (Desbordamiento del menú y encabezado):
+- Descripción: En pantallas muy estrechas de celulares, los elementos del encabezado y los enlaces del menú de navegación aparecían desalineados e intentaban colocarse horizontalmente, rompiendo el diseño y forzando un scroll horizontal indeseado.
+- Solución: Se aplicó el enfoque mobile-first en los estilos base configurando el encabezado y el menú con flex-direction: column y centrando sus elementos, permitiendo que se apilen de forma vertical limpia en dispositivos móviles.
+
+2. Problema en tablets de 768 px (Imágenes y tarjetas estáticas):
+- Descripción: Al probar el modo dispositivo en resoluciones de tablet, las tarjetas de la flota y los servicios principales se mantenían apiladas verticalmente en una sola columna, desperdiciando el espacio horizontal disponible de la pantalla.
+- Solución: Se implementó una media query con min-width: 768 px que activa dinámicamente propiedades de Grid y Flexbox (como grid-template-columns: repeat(auto-fit, ...)), devolviendo la distribución en filas y columnas adaptativas de manera fluida.
+
+3. Problema de legibilidad en tablas de tarifas (Móvil):
+- Descripción: La tabla de tarifas y precios de alquiler contenía demasiado relleno (padding) y un tamaño de fuente estándar de escritorio, lo que provocaba que se saliera de los márgenes en dispositivos móviles de 360 px.
+- Solución: Se ajustaron los estilos base de la tabla reduciendo el tamaño de la fuente a 0.9rem y compactando los márgenes internos (padding: 0.6rem), logrando que la tabla completa quepa de forma legible en el celular sin generar desplazamiento lateral.

@@ -16,7 +16,6 @@
   --espacios-lg: 2rem;
 }
 
-/* reseteo universal para asegurar las medidas exactas */
 *,
 *::before,
 *::after {
@@ -50,7 +49,7 @@ main {
 
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN (FLEXBOX)
+   2. ENCABEZADO Y NAVEGACIÓN (VERSIÓN MÓVIL BASE: 1 COLUMNA)
    ========================================= */
 header,
 #cabecera {
@@ -58,10 +57,10 @@ header,
   color: var(--crema);
   padding: var(--espacios-md);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 1rem;
 }
 
 header h1 {
@@ -69,15 +68,14 @@ header h1 {
   color: var(--naranja-pedal);
 }
 
-/* Contenedor flexible del menú con gap y flex-wrap */
 #menu {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   list-style: none;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 0.8rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 #menu a {
@@ -87,7 +85,6 @@ header h1 {
   padding: 0.5rem 0.8rem;
 }
 
-/* estado de la pagina actual en el menu */
 #menu a.activo {
   color: var(--verde-ruta);
   font-weight: 600;
@@ -110,46 +107,39 @@ header h1 {
 
 
 /* =========================================
-   3. SECCIONES Y TARJETAS (SERVICIOS Y FLOTA)
+   3. SECCIONES Y TARJETAS (ESTILO BASE MÓVIL: 1 COLUMNA)
    ========================================= */
 #inicio {
-  min-height: 40vh;
   padding-top: var(--espacios-lg);
   padding-bottom: var(--espacios-lg);
 }
 
-/* PASO 1: Portada hero en dos columnas con Grid y centrado vertical */
 .portada-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-/* Contenedor flex para alinear los 3 servicios principales en horizontal en PC */
+.portada-hero .btn-reserva {
+  margin: 0 auto;
+}
+
 .servicios-principales {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.servicios-principales .servicio {
-  flex: 1 1 300px;
-}
-
-/* Cuadrícula adaptable para los 7 modelos de la flota con Grid */
 .flota-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-/* Estilo general de las tarjetas en formato flexible para alinear el contenido al fondo */
 .servicio {
   display: flex;
   flex-direction: column;
@@ -160,7 +150,6 @@ header h1 {
   background-color: var(--crema);
 }
 
-/* Control estricto de la imagen para que llene la tarjeta de lado a lado con bordes redondeados */
 .servicio img {
   width: 100%;
   height: 200px;
@@ -170,7 +159,6 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-/* Estilo para los precios dentro de la flota */
 .servicio .precio {
   font-weight: bold;
   color: var(--verde-ruta);
@@ -179,13 +167,13 @@ header h1 {
 
 
 /* =========================================
-   PASO 2: GALERÍA "NUESTRAS RUTAS" (GRID)
+   GALERÍA DE RUTAS (MÓVIL BASE: 1 COLUMNA)
    ========================================= */
 .galeria-rutas {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas en una sola fila */
-  gap: 2rem;
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .tarjeta-ruta {
@@ -215,13 +203,12 @@ header h1 {
 
 
 /* =========================================
-   PASO 3: LAYOUT DE RESERVAS EN PROPORCIÓN 2:1 (GRID)
+   LAYOUT DE RESERVAS (MÓVIL BASE: 1 COLUMNA)
    ========================================= */
 .reservas-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* Formulario 2 partes, lateral 1 parte */
-  gap: 3rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .reservas-layout form {
@@ -242,40 +229,21 @@ header h1 {
 
 
 /* =========================================
-   PASO 4: CAMPOS CORTOS EN LA MISMA FILA (FLEXBOX)
-   ========================================= */
-.fila-campos {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-.campo-corto {
-  flex: 1;
-}
-
-.campo-corto input {
-  width: 100%;
-}
-
-
-/* =========================================
-   4. TABLAS (Tarifas y Rutas)
+   4. TABLAS (Móvil base adaptado)
    ========================================= */
 .tabla,
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
 }
 
 .tabla th,
 .tabla td,
 table th,
 table td {
-  padding: 1rem;
+  padding: 0.6rem;
   border: 1px solid var(--gris-asfalto);
   text-align: left;
 }
@@ -332,6 +300,9 @@ button:hover,
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btn-reserva:hover {
@@ -346,12 +317,12 @@ button:hover,
 
 
 /* =========================================
-   6. FORMULARIOS (Página de Reservas)
+   6. FORMULARIOS (Móvil base)
    ========================================= */
 form fieldset {
   border: 2px solid var(--gris-asfalto);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 1.5rem;
   background-color: var(--crema);
 }
@@ -362,15 +333,14 @@ form legend {
   padding: 0 0.5rem;
 }
 
-form .campo,
 form div,
 form p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-weight: bold;
 }
 
@@ -381,12 +351,10 @@ form textarea {
   padding: 0.8rem;
   border: 1px solid var(--gris-asfalto);
   border-radius: 8px;
-  box-sizing: border-box;
   background-color: var(--crema);
   color: var(--azul-noche);
 }
 
-/* ajuste para que los radios y checkboxes no se estiren al 100% */
 form input[type="radio"],
 form input[type="checkbox"] {
   width: auto;
@@ -415,53 +383,32 @@ form input[type="submit"] {
   margin-top: 1rem;
 }
 
+/* Fila de campos cortos en móvil: en columna por defecto */
+.fila-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.campo-corto {
+  flex: 1;
+}
+
 
 /* =========================================
-   7. UTILIDADES, ELEMENTOS FLOTANTES Y PIE
+   7. PIE DE PÁGINA (MÓVIL BASE: 1 COLUMNA)
    ========================================= */
-.celda-electrica {
-  position: relative;
-  padding-right: 60px;
-}
-
-.etiqueta-nuevo {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: var(--naranja-pedal);
-  color: var(--azul-noche);
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-size: 0.65rem;
-  font-weight: bold;
-}
-
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--verde-ruta);
-  color: var(--crema);
-  padding: 10px 15px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  z-index: 1000;
-}
-
-/* Pie organizado en tres bloques alineados por arriba */
 #pie {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  align-items: start;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background-color: var(--azul-noche);
   color: var(--crema);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   margin-top: 3rem;
 }
 
-/*quito las franjas alternas blancas para que el footer se vea uniforme*/
 #pie table tbody tr:nth-child(even) {
   background-color: transparent;
 }
@@ -480,6 +427,117 @@ form input[type="submit"] {
   text-decoration: underline;
 }
 
+/* Botón flotante de WhatsApp (Corregido con su punto) */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--verde-ruta);
+  color: var(--crema);
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp:hover {
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+}
+
 footer {
   margin-bottom: 80px;
+}
+
+
+/* =========================================
+   8. MEDIA QUERIES (TABLET Y ESCRITORIO - A PARTIR DE 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  /* Encabezado: recupera distribución horizontal */
+  header, #cabecera {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  #menu {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  /* Portada hero en dos columnas */
+  .portada-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .portada-hero .btn-reserva {
+    margin: 0;
+  }
+
+  /* Servicios principales: se acomodan en fila */
+  .servicios-principales {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .servicios-principales .servicio {
+    flex: 1 1 300px;
+  }
+
+  /* Flota de bicicletas en cuadrícula adaptable */
+  .flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  /* Galería de rutas en 3 columnas */
+  .galeria-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* Layout de reservas en proporción 2:1 */
+  .reservas-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Fila de campos cortos (documento y celular) lado a lado */
+  .fila-campos {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  /* Tablas con tamaño normal en pantallas grandes */
+  .tabla,
+  table {
+    font-size: 1rem;
+  }
+
+  .tabla th,
+  .tabla td,
+  table th,
+  table td {
+    padding: 1rem;
+  }
+
+  /* Pie de página en columnas organizadas */
+  #pie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+    gap: 1.5rem;
+  }
 }

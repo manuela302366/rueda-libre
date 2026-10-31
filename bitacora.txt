@@ -19,13 +19,13 @@ html: estructura  <p>Bienvenido a Rueda Libre</p>
 css: diseño  .verde { color: green; }
 JavaScript Funcionalidad de la pagina console.log("hola mundo")
 
-Origen                           Destino    Ruta que escribí
-index.html                       Tarifas    pagina/tarifas.html 
-index.html                       Reservas   pagina/reservas.html
-paginas/tarifas.html             inicio     ../index.html
-paginas/tarifas.html             Reservas   reservas.html
-paginas/reservas.html            inicio     ../index.html
-paginas/reservas.html            Tarifas    tarifas.html
+Origen                             Destino    Ruta que escribí
+index.html                         Tarifas    paginas/tarifas.html 
+index.html                         Reservas   pagina/reservas.html
+paginas/tarifas.html               inicio     ../index.html
+paginas/tarifas.html               Reservas   reservas.html
+paginas/reservas.html              inicio     ../index.html
+paginas/reservas.html              Tarifas    tarifas.html
 
 Justificacion de las elecciones  para las casillas de selección
 *email: type ="email" no text poruqe email valida que tenga el @ y .comp
@@ -38,31 +38,31 @@ Justificacion de las elecciones  para las casillas de selección
 
 
 Tabla de pruebas
-Dato de prueba       Resultado esperado              Resultado obtenido
-Nombre (vacio)       No permite enviar               No permite enviar          
-                     porque es obligatorio           porque es obligatorio  
+Dato de prueba        Resultado esperado             Resultado obtenido
+Nombre (vacio)        No permite enviar              No permite enviar          
+                      porque es obligatorio          porque es obligatorio  
 
-correo electrónico   Rechaza el correo porque        Rechaza el correo porque
-(123)                no tiene un formato válido      no tiene un formato válido     
+correo electrónico    Rechaza el correo porque       Rechaza el correo porque
+(123)                 no tiene un formato válido     no tiene un formato válido     
 
-Documento            Rechaza las letras porque       Rechaza las letras porque 
-(abs123)             solo se permiten números        solo se permiten números
+Documento             Rechaza las letras porque      Rechaza las letras porque 
+(abs123)              solo se permiten números       solo se permiten números
 
-Celular              Rechaza el numero porque        Rechaza el numero porque 
-2153                 no tiene 10 digitos             no tiene 10 digitos
+Celular               Rechaza el numero porque       Rechaza el numero porque 
+2153                  no tiene 10 digitos            no tiene 10 digitos
 
-Fecha 02/10/2026     Rechaza la fecha porque esta    Rechaza la fecha porque esta    
-                     fuera del rango permitido       fuera del rango permitido         
+Fecha 02/10/2026      Rechaza la fecha porque esta   Rechaza la fecha porque esta    
+                      fuera del rango permitido      fuera del rango permitido      
 
-Cantidad de          Rechaza el valor porque el      Rechaza el valor porque
-bicicletas (9)       máximo son 6                    máximo son 6              
+Cantidad de           Rechaza el valor porque el     Rechaza el valor porque
+bicicletas (9)        máximo son 6                   máximo son 6                  
 
 
-Politica de          No deja avanzar porque es       No deja avanzar porque es
-alquiler             una casilla obligatoria         una casilla obligatoria
+Politica de           No deja avanzar porque es      No deja avanzar porque es
+alquiler              una casilla obligatoria        una casilla obligatoria
 
-Documento            Rechaza porque tiene            Rechaza porque tiene
-(25469)              menos de 6 digitos              menos de 6 digitos
+Documento             Rechaza porque tiene           Rechaza porque tiene
+(25469)               menos de 6 digitos             menos de 6 digitos
 
 Prueba contraste 1
 texto blanco #FFFFFF sobre verde ruta #1E7A4F 5.31:1 Apto para texto normal
@@ -112,15 +112,15 @@ blanco #FFFFFF sobre azul noche #14213D  15.97:1 Apta para texto normal
 
 https://manuela302366.github.io/rueda-libre/
 
-comprobado en devtools-styles y computed
-Inspeccione el parrafo <p> Alquiler de bicicletas y recorridos guiados por medellín</p> en index.html
-Propiedad que si hereda
-color y font-family
-En Devtools-styles se ve en la seccion Inherited from body que el p recibe el color var(--azul-noche) y font-family: var(--fuentes-texto) del body.No tiene color propio, lo hereda
+Inspeccion de Grid (DevTools):
+A 1280px se visualizan 3 columnas.
+A 900px se visualizan 2 columnas.
+A 500px se visualiza 1 columna.
 
-propiedad que no se hereda
-background-color y padding/margin
-el body tiene  background-color:
-var(--crema) pero el p no lo hereda como color solido, en computed aparece transparente.
+Inspeccion en DevTools (Styles y Computed):
+Inspeccione el parrafo <p> Alquiler de bicicletas y recorridos guiados por medellin</p> en index.html
+Propiedad que si hereda: color y font-family
+En Devtools-styles se ve en la seccion Inherited from body que el p recibe el color var(--azul-noche) y font-family: var(--fuentes-texto) del body. No tiene color propio, lo hereda.
 
-
+Propiedad que no se hereda: background-color y padding/margin
+El body tiene background-color var(--crema) pero el p no lo hereda como color solido, en computed aparece transparente.

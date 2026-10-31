@@ -1,75 +1,6 @@
-/* --- PASO 1 --- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* --- PASO 2 --- */
-main {
-  max-width: 75rem;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#inicio {
-  min-height: 40vh;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-/* --- PASO 3: TARJETAS --- */
-.servicios {
-  display: block; /* por ahora en columna, sin flex raro */
-}
-
-.servicio {
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  background-color: #ffffff;
-}
-
-.servicio img {
-  width: 100%;
-  height: 220px; /*controlamos la altura*/
-  object-fit: cover; /*para que la imagen se recorte y no se deforme*/
-  display: block;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/* PASO 4: TABLAS - lectura, relleno, bordes y encabezado marca */
-.tabla,
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-}
-
-.tabla th,
-.tabla td,
-table th,
-table td {
-  padding: 1rem; /* relleno en rem - OBLIGATORIO */
-  border: 1px solid #ccc; /* borde en px - OBLIGATORIO */
-  text-align: left;
-}
-
-.tabla thead th,
-table thead th {
-  background-color: #0d2a54; /* fondo de marca - azul oscuro */
-  color: #ffffff; /* blanco para contraste AAA */
-  font-weight: bold;
-}
-
-.tabla tbody tr:nth-child(even),
-table tbody tr:nth-child(even) {
-  background-color: #f2f6ff;
-}
-
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y VARIABLES (:root)
+   ========================================= */
 :root {
   --verde-ruta: #1e7a4f;
   --naranja-pedal: #f39a2b;
@@ -84,6 +15,14 @@ table tbody tr:nth-child(even) {
   --espacios-md: 1rem;
   --espacios-lg: 2rem;
 }
+
+/* reseteo universal para asegurar las medidas exactas */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--crema);
   color: var(--azul-noche);
@@ -91,57 +30,192 @@ body {
   margin: 0;
   padding: 0;
 }
-header {
+
+h1, h2, h3 {
+  font-family: var(--fuentes-titulos);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+main {
+  max-width: 75rem; 
+  width: 90%;
+  margin: 0 auto;
+  padding: var(--espacios-lg);
+}
+
+
+/* =========================================
+   2. ENCABEZADO Y NAVEGACIÓN (FLEXBOX)
+   ========================================= */
+header,
+#cabecera {
   background-color: var(--azul-noche);
-  color: white;
+  color: var(--crema);
   padding: var(--espacios-md);
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
+
 header h1 {
   margin: 0;
   color: var(--naranja-pedal);
 }
-/*nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: var(--espacios-md);
-}*/
 
-h1,
-h2,
-h3 {
-  font-family: var(--fuentes-titulos);
+/* Contenedor flexible del menú con gap y flex-wrap */
+#menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
-  color: white;
+#menu a {
+  color: var(--gris-asfalto);
   text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+}
+
+/* estado de la pagina actual en el menu */
+#menu a.activo {
+  color: var(--verde-ruta);
+  font-weight: 600;
+}
+
+#menu a:hover {
+  color: var(--naranja-pedal);
+  text-decoration: underline;
+}
+
+#menu a:focus {
+  color: var(--naranja-pedal);
+  outline: 2px solid var(--naranja-pedal);
+  outline-offset: 3px;
+}
+
+#menu li:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   3. SECCIONES Y TARJETAS (SERVICIOS Y FLOTA)
+   ========================================= */
+#inicio {
+  min-height: 40vh;
+  padding-top: var(--espacios-lg);
+  padding-bottom: var(--espacios-lg);
+}
+
+/* Contenedor flex para alinear los 3 servicios principales en horizontal en PC */
+.servicios-principales {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.servicios-principales .servicio {
+  flex: 1 1 300px;
+}
+
+/* Cuadrícula adaptable para los 7 modelos de la flota con Grid */
+.flota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Estilo general de las tarjetas en formato flexible para alinear el contenido al fondo */
+.servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 3px solid var(--gris-asfalto);
+  border-radius: 12px;
+  background-color: var(--crema);
+}
+
+/* Control estricto de la imagen para que llene la tarjeta de lado a lado con bordes redondeados */
+.servicio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para los precios dentro de la flota */
+.servicio .precio {
+  font-weight: bold;
+  color: var(--verde-ruta);
+  margin: 0.5rem 0 1rem 0;
+}
+
+
+/* =========================================
+   4. TABLAS (Tarifas y Rutas)
+   ========================================= */
+.tabla,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.tabla th,
+.tabla td,
+table th,
+table td {
+  padding: 1rem;
+  border: 1px solid var(--gris-asfalto);
+  text-align: left;
+}
+
+.tabla thead th,
+table thead th {
+  background-color: var(--azul-noche);
+  color: var(--crema);
   font-weight: bold;
 }
 
-main {
-  padding: var(--espacios-lg);
-  max-width: 900px;
-  margin: 0 auto;
-}
-img {
-  max-width: 100%;
-  border-radius: 10px;
+.tabla tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: var(--crema);
 }
 
-.boton-primario {
+
+/* =========================================
+   5. BOTONES Y COMPONENTES
+   ========================================= */
+.boton-primario,
+button,
+.btn {
   background-color: var(--verde-ruta);
-  color: white;
+  color: var(--crema);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
 }
+
 .boton-secundario {
   background-color: var(--naranja-pedal);
   color: var(--azul-noche);
@@ -152,36 +226,11 @@ img {
   display: inline-block;
 }
 
-button,
-.btn {
-  background-color: var(--verde-ruta);
-  color: white;
-  padding: var(--espacios-sm) var(--espacios-md);
-  border: none;
-  border-radius: 6px;
-}
-button:hover {
+button:hover,
+.btn:hover {
   background-color: var(--naranja-pedal);
 }
-/*paso 1 SOSA 4*/
-#menu a {
-  color: var(--gris-asfalto);
-}
-#menu a.activo {
-  color: var(--verde-ruta);
-  font-weight: 600;
-}
-/*paso 4 -hover y focus menú*/
-#menu a:hover {
-  color: var(--naranja-pedal);
-  text-decoration: underline;
-}
-#menu a:focus {
-  color: var(--naranja-pedal);
-  outline: 2px solid var(--naranja-pedal);
-  outline-offset: 3px;
-}
-/* paso 5 -botón Reservar ahora*/
+
 .btn-reserva {
   background-color: var(--verde-ruta);
   color: var(--crema);
@@ -191,36 +240,48 @@ button:hover {
   font-weight: 600;
   display: inline-block;
 }
+
 .btn-reserva:hover {
   background-color: var(--naranja-pedal);
   color: var(--azul-noche);
 }
+
 .btn-reserva:focus {
   outline: 3px solid var(--azul-noche);
   outline-offset: 3px;
 }
-/* paso 6 -foco formulario*/
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--verde-ruta);
-  outline-offset: 2px;
-  border-color: var(--verde-ruta);
-}
-/* PASO 5: FORMULARIO - etiqueta sobre campo, ancho completo, separación y botón generoso */
+
+
+/* =========================================
+   6. FORMULARIOS (Página de Reservas)
+   ========================================= */
 form {
   max-width: 35rem;
   margin: 2rem auto;
 }
 
+form fieldset {
+  border: 2px solid var(--gris-asfalto);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--crema);
+}
+
+form legend {
+  font-weight: bold;
+  color: var(--azul-noche);
+  padding: 0 0.5rem;
+}
+
 form .campo,
 form div,
 form p {
-  margin-bottom: 1.5rem; /* separación entre grupos */
+  margin-bottom: 1.5rem;
 }
 
 form label {
-  display: block; /* etiqueta SOBRE su campo */
+  display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
@@ -228,11 +289,28 @@ form label {
 form input,
 form select,
 form textarea {
-  width: 100%; /* a todo el ancho disponible */
+  width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gris-asfalto);
   border-radius: 8px;
   box-sizing: border-box;
+  background-color: var(--crema);
+  color: var(--azul-noche);
+}
+
+/* ajuste para que los radios y checkboxes no se estiren al 100% */
+form input[type="radio"],
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--verde-ruta);
+  outline-offset: 2px;
+  border-color: var(--verde-ruta);
 }
 
 form button,
@@ -240,98 +318,80 @@ form input[type="submit"] {
   display: block;
   width: 100%;
   padding: 1rem 1.5rem;
-  background-color: #2a5db0;
-  color: white;
+  background-color: var(--verde-ruta);
+  color: var(--crema);
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
   margin-top: 1rem;
 }
-/*  MENÚ EN FILA */
 
-/*
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-nav li {
-  display: inline-block;
-}
 
-nav a {
-  text-decoration: none;
-  padding: 0.5rem 0.8rem;
-  color: #0d2a54;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #2a5db0;
-  text-decoration: underline;
-}
-
-*/
-
-#menu {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-#menu li:hover {
-  transform: scale(1.1);
-}
-#pie {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  gap: 1.5rem;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.celda-electrica {
-  position: relative;
-}
+/* =========================================
+   7. UTILIDADES, ELEMENTOS FLOTANTES Y PIE
+   ========================================= */
 .celda-electrica {
   position: relative;
   padding-right: 60px;
 }
+
 .etiqueta-nuevo {
   position: absolute;
   top: 4px;
   right: 4px;
-  background: #2a5db0;
-  color: white;
+  background: var(--naranja-pedal);
+  color: var(--azul-noche);
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 0.65rem;
+  font-weight: bold;
 }
+
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25d366;
-  color: white;
+  background: var(--verde-ruta);
+  color: var(--crema);
   padding: 10px 15px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   z-index: 1000;
 }
+
+/* Pie organizado en tres bloques alineados por arriba */
+#pie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+  gap: 1.5rem;
+  background-color: var(--azul-noche);
+  color: var(--crema);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+/*quito las franjas alternas blancas para que el footer se vea uniforme*/
+#pie table tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+#pie table td, 
+#pie table th {
+  border: 1px solid var(--gris-asfalto);
+}
+
+#pie a {
+  color: var(--naranja-pedal);
+  text-decoration: none;
+}
+
+#pie a:hover {
+  text-decoration: underline;
+}
+
 footer {
   margin-bottom: 80px;
-}
-#cabecera {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }

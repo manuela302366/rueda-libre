@@ -3,212 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reserva tu bicicleta- RuedaLibre</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>Reserva tu bicicleta - Rueda Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-     <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Ojo aqui con los puntos para salir a la carpeta principal y buscar el css -->
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
-<a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
+
   <body>
-    <header>
+    <!-- boton flotante para contacto rapido -->
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
+
+    <!-- cabecera compartida con el menu activo en reservas -->
+    <header id="cabecera">
       <h1>Rueda Libre</h1>
       <nav>
         <ul id="menu">
-          <li><a href="../index.html" >Inicio</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="tarifas.html">Tarifas y rutas</a></li>
           <li><a href="reservas.html" class="activo">Reservas</a></li>
         </ul>
       </nav>
     </header>
-<main>
-    <section>
+
+    <main>
+      <section>
         <h2>Formulario de reserva</h2>
 
-<form action="#" method="post">
-    <!-- _Grupo1: Tus datos-->
-     <fieldset>
-<legend>Tus datos</legend>
+        <!-- aqui empieza el formulario largo dividido por fieldsets -->
+        <form action="#" method="post">
+          
+          <!-- PRIMER BLOQUE: Datos personales del cliente -->
+          <fieldset>
+            <legend>Tus datos</legend>
 
-<div>
-<label for="nombre">Nombre completo</label>
-<input type="text" id="nombre" name="nombre" required minlength="3" >
-</div>
+            <div>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required minlength="3">
+            </div>
 
-<div>
-<label for="documento">Numero de documento</label>
-<input type="text" id="documento" name="documento" required
-pattern="[0-9]{6,10}"
-inputmode="numeric"
-title="solo números, entre 6 y 10 digitos">
-<small>Solo numeros, de 6 a 10 digitos</small>
-</div>
+            <div>
+              <label for="documento">Número de documento</label>
+              <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" inputmode="numeric" title="Solo números, entre 6 y 10 dígitos">
+              <small>Solo números, de 6 a 10 dígitos</small>
+            </div>
 
+            <div>
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+            </div>
 
-<div>
-<label for="correo">Correo electrónico</label>
-<input type="email" id="correo" name="correo" required placeholder="ejemplo@Correo.com">
-</div>
+            <div>
+              <label for="celular">Celular</label>
+              <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" maxlength="10" inputmode="numeric" title="Debe tener 10 dígitos y empezar por 3">
+              <small>Debe tener 10 dígitos y empezar por 3</small>
+            </div>
+          </fieldset>
 
-<div>
-<label for="celular">Celular</label>
-<input type="tel"  id="celular" name="celular" required
-pattern="3[0-9]{9}"
-maxlength="10"
-inputmode="numeric"
-title="Debe tener 10 digitos y empezar por 3">
-<small> Debe tener 10 digitos y empezar por 3</small>
-</div>
-     </fieldset>
+          <!-- SEGUNDO BLOQUE: Eleccion de la bicicleta, fechas y planes -->
+          <fieldset>
+            <legend>Tu alquiler</legend>
+            <div> 
+              <label for="fecha">Fecha de alquiler</label> 
+              <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
+            </div>
+             
+            <p>Tipo de bicicleta</p>
+            <div>
+              <label><input type="radio" id="bici-urbana" name="tipo_bicicleta" value="urbana" required> Urbana</label>
+              <label><input type="radio" id="bici-montana" name="tipo_bicicleta" value="montana"> Montaña</label>
+              <label><input type="radio" id="bici-electrica" name="tipo_bicicleta" value="electrica"> Eléctrica</label>
+            </div>
 
+            <div>
+              <p>Plan</p>
+              <label><input type="radio" id="plan-1h" name="plan" value="1h" required> 1 Hora</label>
+              <label><input type="radio" id="plan-medio" name="plan" value="medio_dia"> Medio día</label>
+              <label><input type="radio" id="plan-completo" name="plan" value="dia_completo"> Día completo</label>
+            </div>
+            <br>
+            
+            <div>
+              <label for="cantidad">Cantidad de bicicletas</label>
+              <input type="number" id="cantidad" name="cantidad" required min="1" max="6" value="1">
+            </div>
+            <br>
+            
+            <div>
+              <label for="recorrido">Recorrido guiado</label>
+              <select id="recorrido" name="recorrido">
+                <option value="ninguno">Ninguno</option>
+                <option value="rio y parques">Río y parques</option>
+                <option value="sabores de barrio">Sabores de barrio</option>
+                <option value="reto las palmas">Reto Las Palmas</option>
+              </select>
+            </div>
+          </fieldset>
 
-     <!-- Grupo2: Tu alquiler-->
+          <!-- TERCER BLOQUE: Notas extra y aceptacion de politicas -->
+          <fieldset>
+            <legend>Confirmación</legend>
+            <br>
+            <div>
+              <label for="comentarios">Comentarios</label>
+              <textarea name="comentarios" id="comentarios" maxlength="300" rows="4" placeholder="Opcional, máximo 300 caracteres"></textarea>
+            </div>
+            <br>
+            
+            <div>
+              <label>
+                <input type="checkbox" id="politicas" name="politica" required>
+                Acepto las políticas de alquiler
+              </label>
+            </div>
+          </fieldset>
 
-<fieldset>
-<legend>Tu alquiler</legend>
-<div> 
- 
-  <label for="fecha">Fecha de alquiler </label> 
-    <input type ="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
-</div>
- 
-     <p>Tipo de bicicleta</p>
+          <!-- boton para enviar los datos del form -->
+          <button type="submit" class="btn-reserva">Reservar ahora</button>
+        </form>
+      </section>
+    </main>
 
-<div>
-   <label><input type="radio" id="bicicleta urbana" name="tipo de bicicleta" value="urbana" required>Urbana</label>
-   <label><input type="radio" id="bicicleta Montaña" name="tipo de bicicleta" value="Montaña">Montaña<label>
-    <label><input type="radio" id="bicicleta electrica" name="tipo de bicicleta" value="electrica">electrica</label>
-</div>
+    <hr>
 
-<div>
-    <p>plan</p>
-<label><input type="radio" id="plan 1h" name="plan" value="1h" required>1 Hora</label>
-   <label><input type="radio" id="Medio dia" name="plan" value="medio dia">Medio día<label>
-    <label><input type="radio" id="bdia completo" name="plan" value="dia completo">Día completo</label>
-</div>
-<br>
-<div>
-<label for="cantidad">Cantidad de bicicletas</label>
-<input type="number" id=cantidad name="cantidad" required min="1" max="6" value="1">
-</div>
-<br>
-<div>
-<label for="recorrido">Recorrido guiado</label>
-<select id="recorrido" name="recorrido">
-  <option value="ninguno">ninguno</option>
-<option value="rio y parques">Río y parques</option>
-<option value="sabore de barrio">Sabores de barrio</option>
-<option value="Reto las palmas">Reto Las Palmas</option>
-
-</select>
-</div>
-</fieldset>
-
-
-  <!-- Grupo3: Confirmación-->
-     <fieldset>
-      <legend>Confirmación</legend>
-     
-<br>
- <div>
-<label for="comentarios">comentarios</label>
-<textarea name="comentarios" id="comentarios" maxlength="300" rows="4" placeholder="Opcional, máximo 300 caracteres"></textarea>
-</div>
-<br>
-   <div>
-<label for="politicas"> </label>
-  <input type="checkbox" id="politicas" name="politica" required>
-  Acepto las politicas de alquiler
- </label>
- </div>
-</fieldset>
-
-    <button type="submit" class="btn-reserva">Reservar ahora</button>
-
-</form>
- </section>
-    <h3>Reserva tu bicicleta</h3>
-    <p>
-      Contacto:<a href="mailto:hola@ruedalibre.example">
-        hola@ruedalibre.example
-      </a>
-    </p>
-<aside>
-    <h3>Horario de atención</h3>
-
-    <dl>
-      <dt>Lunes a viernes</dt>
-      <dd>7:00 a.m - 7:00 a.m</dd>
-
-      <dt>sábados,domingos y fetivos</dt>
-      <dd> 6:00 a.m - 2:00 p.m<dd>
-      </p>
-      </dd>
-    </dl>
-    </aside>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas -Rueda Libre</title>
-</head>
-<body>
-
-</main>
-<hr>
-
+    <!-- pie de pagina en tres columnas con las tablas de contacto y horarios -->
     <footer id="pie">
       <div>
         <h2>Rueda Libre</h2>
-        <p> &copy;Rueda Libre|hola@ruedalibre.example|2026</p>
+        <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
       </div>
 
       <div>
         <h2>Contáctanos</h2>
-
         <table>
-        <tbody>
-          <tr>
-
-            <th>Número</th>
-            <td>
-              <a href="https://wa.me/57300000000">+57 320 000 0</a>
-            </td>
-          </tr>
-          <tr>
-<th>Instagram</th>
-<td>
-<a href="https://instagram.com">abrir</a>
-</td>
-</tr>
-<tr>
-  <th>TikTok</th>
-<td>
-  <a href="https://tiktok.com">abrir</a>
-</td>
- </tr>
- 
-        
-        </tbody>
+          <tbody>
+            <tr>
+              <th>Número</th>
+              <td><a href="https://wa.me/57300000000">+57 320 000 0</a></td>
+            </tr>
+            <tr>
+              <th>Instagram</th>
+              <td><a href="https://instagram.com" target="_blank">Abrir</a></td>
+            </tr>
+            <tr>
+              <th>TikTok</th>
+              <td><a href="https://tiktok.com" target="_blank">Abrir</a></td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
       <div>
-          <aside>
-    <h3>Horario de atención</h3>
-
-    <dl>
-      <dt>Lunes a viernes</dt>
-      <dd>7:00 a.m - 7:00 a.m</dd>
-
-      <dt>sábados,domingos y fetivos</dt>
-      <dd> 6:00 a.m - 2:00 p.m<dd>
-      </p>
-      </dd>
-    </dl>
-    </aside>
+        <aside>
+          <h3>Horario de atención</h3>
+          <dl>
+            <dt>Lunes a viernes</dt>
+            <dd>7:00 a.m. - 7:00 p.m.</dd>
+            <dt>Sábados, domingos y festivos</dt>
+            <dd>6:00 a.m. - 2:00 p.m.</dd>
+          </dl>
+        </aside>
       </div>
     </footer>
   </body>
-</html>
-</body>
 </html>

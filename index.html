@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
+    <!-- fuentes de google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- mis estilos -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
-  <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
   <body>
+    <!-- el boton flotante de whatsapp para que quede siempre visible -->
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a> 
+
+    <!-- barra de navegacion principal de la pagina con flexbox -->
     <header id="cabecera">
       <h1>Rueda Libre</h1>
       <nav>
@@ -22,85 +27,160 @@
         </ul>
       </nav>
     </header>
+
+    <!-- aqui arranca todo el contenido fuerte de la pagina de inicio -->
     <main>
+      <!-- seccion de bienvenida y presentacion -->
+      <section>
+        <p>Alquiler de bicicletas y recorridos guiados por Medellín.</p>
+        <a href="#encuentranos">Encuéntranos</a>
+        <br /><br />
+
+        <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" />
+        <br />
+
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          Somos un equipo apasionado por el ciclismo y la movilidad sostenible.
+          Nuestra misión es ofrecer una experiencia única de alquiler de
+          bicicletas en Medellín, permitiendo a nuestros clientes disfrutar de la
+          ciudad desde una perspectiva diferente y ecológica.
+        </p>
         
-      <p>Alquiler de bicicletas y recorridos guiados por Medellín.</p>
-      <a href="#encuentranos">Encuéntranos</a>
-      <br />
-    
+        <img src="./img/bicicleta.jpg" alt="bicicletas de Rueda Libre" width="400">
+      </section>
 
-      <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" />
-      <br />
-      <h2>¿Quiénes somos?</h2>
-      <p>
-        Somos un equipo apasionado por el ciclismo y la movilidad sostenible.
-        Nuestra misión es ofrecer una experiencia única de alquiler de
-        bicicletas en Medellín, permitiendo a nuestros clientes disfrutar de la
-        ciudad desde una perspectiva diferente y ecológica.
-      </p>
-      <img
-        src="./img/bicicleta.jpg"
-        alt="bicicletas de Rueda Libre"
-        width="400">
-      
-<main>
-  <section id="inicio">
-    <h2>Nuestros Servicios</h2>
-    <p>En Rueda Libre, ofrecemos una variedad de servicios para satisface tus necesidades de movilidad:</p>
+      <!-- SECCIÓN 1: Los tres servicios principales en horizontal (en PC) -->
+      <section id="inicio">
+        <h2>Nuestros Servicios</h2>
+        <p>En Rueda Libre, ofrecemos una variedad de servicios para satisfacer tus necesidades de movilidad:</p>
 
-    <div class="servicios">
-      <article class="servicio">
-        <img src="img/alquiler.jpg" alt="Alquiler" width="400"/>
-        <h3>Alquiler por horas o días</h3>
-        <p>Incluye casco y candado.</p>
-      </article>
+        <!-- Contenedor flex para alinear los 3 servicios principales en fila -->
+        <div class="servicios-principales">
+          <article class="servicio">
+            <img src="img/alquiler.jpg" alt="Alquiler" width="400"/>
+            <h3>Alquiler por horas o días</h3>
+            <p>Incluye casco y candado.</p>
+          </article>
 
-      <article class="servicio">
-        <img src="img/ciclista.jpg" alt="Recorridos">
-        <h3>Recorridos guiados</h3>
-        <p>Conoce la ciudad. <a href="paginas/tarifas.html">Ver tarifas</a></p>
-      </article>
+          <article class="servicio">
+            <img src="img/ciclista.jpg" alt="Recorridos" width="400">
+            <h3>Recorridos guiados</h3>
+            <p>Conoce la ciudad. <a href="paginas/tarifas.html">Ver tarifas</a></p>
+          </article>
 
-      <article class="servicio">
-        <img src="img/taller.jpg" alt="Taller">
-        <h3>Taller básico</h3>
-        <p>Mantenimiento rápido.</p>
-      </article>
-    </div>
-    </section>
+          <article class="servicio">
+            <img src="img/taller.jpg" alt="Taller" width="400">
+            <h3>Taller básico</h3>
+            <p>Mantenimiento rápido.</p>
+          </article>
+        </div>
+      </section>
 
-      <h3>¿cómo alquilar?</h3>
-      <p>Para alquilar una bicicleta, simplemente:</p>
-      <ol>
-        <li>Visita nuestra tienda en Medellín</li>
-        <li>
-          O reserva en línea a través de nuestro sitio web,elige tu bicicleta y
-          duración del alquiler
-        </li>
-        <li>presenta tu identificación y realiza el depósito</li>
-        <li>Firma el contrato de alquiler</li>
-      </ol>
-      </article>
-</section>
-      <br />
+      <!-- SECCIÓN 2: La nueva flota de 7 modelos en cuadrícula (Grid) abajo -->
+      <section>
+        <h2>Nuestra Flota</h2>
+        <p>Conoce los modelos disponibles para alquilar y recorrer Medellín a tu ritmo:</p>
 
-      <a href="paginas/reservas.html" class="btn-reserva">Reservar ahora</a>
-      <br />
-      <img src="./img/encuentra.jpg" alt="bicicletas de Rueda Libre" width="100" />
+        <div class="flota-grid">
+          <!-- Tarjeta 1 -->
+          <article class="servicio">
+            <img src="img/alquiler.jpg" alt="Urbana Clásica" width="400"/>
+            <h3>Urbana Clásica</h3>
+            <p>Cómoda y liviana para las ciclorrutas.</p>
+            <p class="precio">$10.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
 
-      <h3>Encuéntranos</h3>
-      <p id="encuentranos">Ubicación</p>
-      <a href="https://maps.google.com/?q=Antioquia,Medellín" target="_blank"
-        >Ver en Google Maps</a
-      >
+          <!-- Tarjeta 2 -->
+          <article class="servicio">
+            <img src="img/bicicleta.jpg" alt="Urbana Plegable" width="400">
+            <h3>Urbana Plegable</h3>
+            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+            <p class="precio">$12.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
 
-      <a href="mailto:hola@ruedalibre.example">
-        <p>hola@ruedalibre.example</p>
-      </a>
+          <!-- Tarjeta 3 -->
+          <article class="servicio">
+            <img src="img/ciclista.jpg" alt="Montaña Trail" width="400">
+            <h3>Montaña Trail</h3>
+            <p>Suspensión delantera y 21 cambios para las subidas.</p>
+            <p class="precio">$15.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
+
+          <!-- Tarjeta 4 -->
+          <article class="servicio">
+            <img src="img/taller.jpg" alt="Gravel Aventura" width="400">
+            <h3>Gravel Aventura</h3>
+            <p>Para rutas mixtas de asfalto y destapado.</p>
+            <p class="precio">$18.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
+
+          <!-- Tarjeta 5 -->
+          <article class="servicio">
+            <img src="img/encuentra.jpg" alt="Eléctrica Urbana" width="400">
+            <h3>Eléctrica Urbana</h3>
+            <p>Asistencia eléctrica con 45 km de autonomía.</p>
+            <p class="precio">$25.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
+
+          <!-- Tarjeta 6 -->
+          <article class="servicio">
+            <img src="img/alquiler.jpg" alt="Infantil" width="400">
+            <h3>Infantil</h3>
+            <p>Para niños de 6 a 10 años.</p>
+            <p class="precio">$8.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
+
+          <!-- Tarjeta 7: El modelo Tándem -->
+          <article class="servicio">
+            <img src="img/bicicleta.jpg" alt="Tándem" width="400">
+            <h3>Tándem</h3>
+            <p>Para dos personas; perfecta para pasear en pareja.</p>
+            <p class="precio">$20.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- los pasos rapidos para que la gente sepa que hacer -->
+      <section>
+        <h3>¿Cómo alquilar?</h3>
+        <p>Para alquilar una bicicleta, simplemente:</p>
+        <ol>
+          <li>Visita nuestra tienda en Medellín.</li>
+          <li>O reserva en línea a través de nuestro sitio web, elige tu bicicleta y la duración del alquiler.</li>
+          <li>Presenta tu identificación y realiza el depósito.</li>
+          <li>Firma el contrato de alquiler.</li>
+        </ol>
+        
+        <br />
+        <a href="paginas/reservas.html" class="btn-reserva">Reservar ahora</a>
+        <br /><br />
+        
+        <img src="./img/encuentra.jpg" alt="bicicletas de Rueda Libre" width="100" />
+      </section>
+
+      <!-- la seccion final con el mapa y el correo -->
+      <section id="encuentranos">
+        <h3>Encuéntranos</h3>
+        <p>Ubicación en Medellín, Antioquia</p>
+        <a href="https://maps.google.com/?q=Antioquia,Medellín" target="_blank">Ver en Google Maps</a>
+        <br /><br />
+        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+      </section>
     </main>
+
     <hr>
+    
+    <!-- pie de pagina sencillito -->
     <footer>
-      <p>&copy;Rueda Libre|hola@ruedalibre.example|2026</p>
+      <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
     </footer>
   </body>
 </html>

@@ -30,15 +30,19 @@
 
     <!-- aqui arranca todo el contenido fuerte de la pagina de inicio -->
     <main>
-      <!-- seccion de bienvenida y presentacion -->
+      <!-- PASO 1: Portada hero en dos columnas con Grid (texto a la izquierda, foto a la derecha, centrado vertical) -->
+      <section class="portada-hero">
+        <div class="portada-texto">
+          <h2>Rueda Libre en Medellín</h2>
+          <p>Alquiler de bicicletas y recorridos guiados por toda la ciudad de forma sostenible.</p>
+          <a href="#encuentranos" class="btn-reserva">Encuéntranos</a>
+        </div>
+        <div class="portada-imagen">
+          <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" />
+        </div>
+      </section>
+
       <section>
-        <p>Alquiler de bicicletas y recorridos guiados por Medellín.</p>
-        <a href="#encuentranos">Encuéntranos</a>
-        <br /><br />
-
-        <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" />
-        <br />
-
         <h2>¿Quiénes somos?</h2>
         <p>
           Somos un equipo apasionado por el ciclismo y la movilidad sostenible.
@@ -178,9 +182,44 @@
 
     <hr>
     
-    <!-- pie de pagina sencillito -->
-    <footer>
-      <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
+    <!-- Pie de página unificado en tres columnas -->
+    <footer id="pie">
+      <div>
+        <h2>Rueda Libre</h2>
+        <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
+      </div>
+
+      <div>
+        <h2>Contáctanos</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Número</th>
+              <td><a href="https://wa.me/57300000000">+57 320 000 0</a></td>
+            </tr>
+            <tr>
+              <th>Instagram</th>
+              <td><a href="https://instagram.com" target="_blank">Abrir</a></td>
+            </tr>
+            <tr>
+              <th>TikTok</th>
+              <td><a href="https://tiktok.com" target="_blank">Abrir</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <aside>
+          <h3>Horario de atención</h3>
+          <dl>
+            <dt>Lunes a viernes</dt>
+            <dd>7:00 a.m. - 7:00 p.m.</dd>
+            <dt>Sábados, domingos y festivos</dt>
+            <dd>6:00 a.m. - 2:00 p.m.</dd>
+          </dl>
+        </aside>
+      </div>
     </footer>
   </body>
 </html>

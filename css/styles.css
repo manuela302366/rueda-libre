@@ -118,6 +118,16 @@ header h1 {
   padding-bottom: var(--espacios-lg);
 }
 
+/* PASO 1: Portada hero en dos columnas con Grid y centrado vertical */
+.portada-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
 /* Contenedor flex para alinear los 3 servicios principales en horizontal en PC */
 .servicios-principales {
   display: flex;
@@ -165,6 +175,89 @@ header h1 {
   font-weight: bold;
   color: var(--verde-ruta);
   margin: 0.5rem 0 1rem 0;
+}
+
+
+/* =========================================
+   PASO 2: GALERÍA "NUESTRAS RUTAS" (GRID)
+   ========================================= */
+.galeria-rutas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en una sola fila */
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.tarjeta-ruta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 3px solid var(--gris-asfalto);
+  border-radius: 12px;
+  background-color: var(--crema);
+}
+
+.tarjeta-ruta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-ruta .precio {
+  font-weight: bold;
+  color: var(--verde-ruta);
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+
+/* =========================================
+   PASO 3: LAYOUT DE RESERVAS EN PROPORCIÓN 2:1 (GRID)
+   ========================================= */
+.reservas-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Formulario 2 partes, lateral 1 parte */
+  gap: 3rem;
+  align-items: start;
+}
+
+.reservas-layout form {
+  max-width: 100%;
+  margin: 0;
+}
+
+.lateral-contacto {
+  background-color: var(--crema);
+  border: 2px solid var(--gris-asfalto);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.lateral-contacto ul {
+  padding-left: 1.2rem;
+}
+
+
+/* =========================================
+   PASO 4: CAMPOS CORTOS EN LA MISMA FILA (FLEXBOX)
+   ========================================= */
+.fila-campos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.campo-corto {
+  flex: 1;
+}
+
+.campo-corto input {
+  width: 100%;
 }
 
 
@@ -255,11 +348,6 @@ button:hover,
 /* =========================================
    6. FORMULARIOS (Página de Reservas)
    ========================================= */
-form {
-  max-width: 35rem;
-  margin: 2rem auto;
-}
-
 form fieldset {
   border: 2px solid var(--gris-asfalto);
   border-radius: 8px;

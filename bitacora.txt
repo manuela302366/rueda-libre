@@ -124,3 +124,29 @@ En Devtools-styles se ve en la seccion Inherited from body que el p recibe el co
 
 Propiedad que no se hereda: background-color y padding/margin
 El body tiene background-color var(--crema) pero el p no lo hereda como color solido, en computed aparece transparente.
+
+Registro de Decisiones Técnicas (Layout en Dos Dimensiones - Grid y Flexbox):
+
+1. Portada de inicio (index.html):
+- Herramienta utilizada: CSS Grid (display: grid).
+- Justificación: Se utilizó Grid porque la portada requiere una estructura bidimensional de dos columnas exactas (1fr 1fr) para posicionar el bloque de texto a la izquierda y la imagen a la derecha de manera simultánea, logrando un centrado vertical preciso con align-items: center.
+
+2. Galería de rutas guiadas (tarifas.html):
+- Herramienta utilizada: CSS Grid (display: grid).
+- Justificación: Se implementó un contenedor con grid-template-columns: repeat(3, 1fr) para organizar las tres tarjetas de los recorridos en una única fila horizontal simétrica y adaptable en pantallas de escritorio.
+
+3. Página de reservas en proporción 2:1 (reservas.html):
+- Herramienta utilizada: CSS Grid (display: grid).
+- Justificación: Se estableció un layout general de dos columnas con la proporción grid-template-columns: 2fr 1fr; de este modo, el formulario principal ocupa dos tercios del ancho disponible y el panel lateral de contacto e información rápida ocupa el tercio restante.
+
+4. Fila del formulario de datos (Documento y Celular):
+- Herramienta utilizada: Flexbox (display: flex).
+- Justificación: Para esta agrupación interna de dos campos cortos relacionados en una misma línea, se eligió Flexbox porque opera perfectamente en una sola dirección horizontal (fila), permitiendo repartir de manera fluida el espacio con flex: 1.
+
+5. Encabezado (Header):
+- Herramienta utilizada: Flexbox (display: flex).
+- Justificación: Se mantiene con Flexbox porque su función principal es alinear en una sola línea horizontal los elementos de una dimensión (el título de la marca a un extremo y los enlaces del menú de navegación al otro), permitiendo además un ajuste fluido con flex-wrap.
+
+6. Pie de página (Footer / #pie):
+- Herramienta utilizada: CSS Grid (display: grid).
+- Justificación: Se estructuró mediante grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) para distribuir de forma automática y paralela los tres bloques informativos del footer en filas y columnas responsivas según el ancho de la pantalla.

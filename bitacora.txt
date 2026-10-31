@@ -181,3 +181,40 @@ Comparativa Técnica: Flota en CSS Propio vs. Bootstrap 5 (MiniReto 5):
 3. Ventajas y desventajas encontradas:
 - Lo que Bootstrap dio sin esfuerzo: Un sistema de grillas robusto y adaptable de manera inmediata con clases predefinidas, ahorrando tiempo de desarrollo y evitando escribir media queries manuales.
 - El control que se perdió: Se depende totalmente de la estructura y estilos predeterminados del framework, lo que limita la libertad creativa y obliga a sobrescribir clases si se desea un diseño completamente personalizado fuera de sus estándares.
+
+
+Registro de Clases Utilitarias de Bootstrap 5.3 (MiniReto 6):
+
+1. d-flex y flex-column flex-md-row:
+- Qué hace: Convierte un contenedor en un bloque flexible (flexbox). En combinación con flex-column y flex-md-row, permite que los elementos se apilen verticalmente en celulares y cambien automáticamente a disposición horizontal (fila) a partir del breakpoint md.
+
+2. d-none d-md-block:
+- Qué hace: Controla la visibilidad responsiva de los elementos. Oculta un elemento por defecto en pantallas pequeñas (d-none) y lo muestra como un bloque (d-md-block) a partir del breakpoint md en adelante.
+
+3. align-items-center y justify-content-between:
+- Qué hace: Alinean los elementos flexibles verticalmente al centro (align-items-center) y distribuyen el espacio horizontal disponible dejando espacio equitativo entre ellos (justify-content-between).
+
+4. rounded-4 y shadow-sm:
+- Qué hace: rounded-4 aplica un borde redondeado pronunciado a los contenedores, mientras que shadow-sm añade una sombra sutil y elegante en la capa superficial del componente.
+
+5. gap-4 y p-4 p-md-5:
+- Qué hace: gap-4 establece un espacio de separación uniforme (gutter) entre los elementos hijos dentro de un contenedor flex o grid. p-4 p-md-5 aplica un relleno interior responsivo (más compacto en móvil y más amplio a partir de md).
+
+
+Conflicto 1: Colores y tipografía de los enlaces (<a>)
+
+Problema: Al integrar Bootstrap, los enlaces heredaron por defecto el color azul clásico y un subrayado que no coincidía con la paleta de colores y el estilo sobrio de Rueda Libre.
+
+Solución: Se aseguró el orden correcto de carga en el <head> (Bootstrap primero y styles.css después) y se reforzaron las clases personalizadas para preservar los estilos corporativos.
+
+Conflicto 2: Márgenes y espaciados en las tarjetas de la flota
+
+Problema: Las propiedades de padding y margin predeterminadas de las tarjetas de Bootstrap sobreescribían los espacios personalizados que se habían definido en el diseño base.
+
+Solución: Se combinaron clases utilitarias de Bootstrap (my-5, g-4, p-3) para estandarizar los espacios externos e internos de manera responsiva sin romper el diseño original.
+
+Conflicto 3: Tamaños de los encabezados (h2, h3)
+
+Problema: Los títulos dentro de la sección de la flota se veían desproporcionados en pantallas pequeñas debido a los estilos globales de tipografía que trae Bootstrap por defecto.
+
+Solución: Se ajustaron los tamaños usando clases de utilidad (h5, small) y se mantuvieron las reglas específicas en el archivo styles.css para respetar la jerarquía visual de la página.

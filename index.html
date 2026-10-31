@@ -9,8 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
     <!-- mis estilos -->
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+     
+<!-- 1. Bootstrap CSS (Primero) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 2. Tu hoja de estilos propia (DESPUÉS de Bootstrap) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+
 
   <body>
     <!-- el boton flotante de whatsapp para que quede siempre visible -->
@@ -31,17 +38,17 @@
     <!-- aqui arranca todo el contenido fuerte de la pagina de inicio -->
     <main>
       <!-- PASO 1: Portada hero en dos columnas con Grid (texto a la izquierda, foto a la derecha, centrado vertical) -->
+    <!-- PASO 1: Portada hero usando tu CSS grid original combinada con columnas -->
       <section class="portada-hero">
-        <div class="portada-texto">
+        <div class="portada-texto col-12 col-md-6">
           <h2>Rueda Libre en Medellín</h2>
           <p>Alquiler de bicicletas y recorridos guiados por toda la ciudad de forma sostenible.</p>
           <a href="#encuentranos" class="btn-reserva">Encuéntranos</a>
         </div>
-        <div class="portada-imagen">
-          <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" />
+        <div class="portada-imagen col-12 col-md-6 text-center">
+          <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" class="img-fluid" />
         </div>
       </section>
-
       <section>
         <h2>¿Quiénes somos?</h2>
         <p>
@@ -82,75 +89,118 @@
       </section>
 
       <!-- SECCIÓN 2: La nueva flota de 7 modelos en cuadrícula (Grid) abajo -->
-      <section>
+      
+<!-- SECCIÓN 2: La nueva flota de 7 modelos en cuadrícula (Grid) abajo -->
+      
+
+
+<!-- SECCIÓN 2: La nueva flota de 7 modelos limpia con Bootstrap -->
+      <section class="container my-5">
         <h2>Nuestra Flota</h2>
         <p>Conoce los modelos disponibles para alquilar y recorrer Medellín a tu ritmo:</p>
 
-        <div class="flota-grid">
+        <div class="row g-4">
           <!-- Tarjeta 1 -->
-          <article class="servicio">
-            <img src="img/urbanaclasica.jpg" alt="Urbana Clásica" width="400"/>
-            <h3>Urbana Clásica</h3>
-            <p>Cómoda y liviana para las ciclorrutas.</p>
-            <p class="precio">$10.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/urbanaclasica.jpg" alt="Urbana Clásica" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Urbana Clásica</h3>
+                <p class="text-muted small">Cómoda y liviana para las ciclorrutas.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$10.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
           <!-- Tarjeta 2 -->
-          <article class="servicio">
-            <img src="img/urbanaplegable.jpg" alt="Urbana Plegable" width="400">
-            <h3>Urbana Plegable</h3>
-            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
-            <p class="precio">$12.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/urbanaplegable.jpg" alt="Urbana Plegable" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Urbana Plegable</h3>
+                <p class="text-muted small">Se dobla en segundos; ideal para combinar con el metro.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$12.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
           <!-- Tarjeta 3 -->
-          <article class="servicio">
-            <img src="img/montañatrail.webp" alt="Montaña Trail" width="400">
-            <h3>Montaña Trail</h3>
-            <p>Suspensión delantera y 21 cambios para las subidas.</p>
-            <p class="precio">$15.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/montañatrail.webp" alt="Montaña Trail" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Montaña Trail</h3>
+                <p class="text-muted small">Suspensión delantera y 21 cambios para las subidas.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$15.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
           <!-- Tarjeta 4 -->
-          <article class="servicio">
-            <img src="img/bicicletagravel.jpg" alt="Gravel Aventura" width="400">
-            <h3>Gravel Aventura</h3>
-            <p>Para rutas mixtas de asfalto y destapado.</p>
-            <p class="precio">$18.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/bicicletagravel.jpg" alt="Gravel Aventura" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Gravel Aventura</h3>
+                <p class="text-muted small">Para rutas mixtas de asfalto y destapado.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$18.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
           <!-- Tarjeta 5 -->
-          <article class="servicio">
-            <img src="img/electricaurbana.webp" alt="Eléctrica Urbana" width="400">
-            <h3>Eléctrica Urbana</h3>
-            <p>Asistencia eléctrica con 45 km de autonomía.</p>
-            <p class="precio">$25.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/electricaurbana.webp" alt="Eléctrica Urbana" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Eléctrica Urbana</h3>
+                <p class="text-muted small">Asistencia eléctrica con 45 km de autonomía.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$25.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
           <!-- Tarjeta 6 -->
-          <article class="servicio">
-            <img src="img/infantil.webp" alt="Infantil" width="400">
-            <h3>Infantil</h3>
-            <p>Para niños de 6 a 10 años.</p>
-            <p class="precio">$8.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/infantil.webp" alt="Infantil" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Infantil</h3>
+                <p class="text-muted small">Para niños de 6 a 10 años.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$8.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
 
-          <!-- Tarjeta 7: El modelo Tándem -->
-          <article class="servicio">
-            <img src="img/tandem.jpg" alt="Tándem" width="400">
-            <h3>Tándem</h3>
-            <p>Para dos personas; perfecta para pasear en pareja.</p>
-            <p class="precio">$20.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
-          </article>
+          <!-- Tarjeta 7 -->
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <img src="img/tandem.jpg" alt="Tándem" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+              <div class="card-body d-flex flex-column p-0">
+                <h3 class="h5 fw-bold text-dark">Tándem</h3>
+                <p class="text-muted small">Para dos personas; perfecta para pasear en pareja.</p>
+                <p class="precio fw-bold text-success mt-auto mb-3">$20.000 / hora</p>
+                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
 
       <!-- los pasos rapidos para que la gente sepa que hacer -->
       <section>
@@ -221,5 +271,7 @@
         </aside>
       </div>
     </footer>
-  </body>
+ <!-- Bootstrap JS Bundle (Justo antes de cerrar body) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

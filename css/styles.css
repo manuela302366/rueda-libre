@@ -490,12 +490,19 @@ footer {
     flex: 1 1 300px;
   }
 
-  .flota-grid {
+/* ELIMINADO / REEMPLAZADO POR BOOTSTRAP GRID (MiniReto 7)
+.flota-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+*/
 
+/* NOTA: Esta regla se mantiene activa para las páginas paginas/tarifas.html 
+   y paginas/reservas.html, pero se sobreescribe en index.html usando Bootstrap */
+.servicio {
+    /* tus estilos de bordes, sombras o fuentes */
+}
   .galeria-rutas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

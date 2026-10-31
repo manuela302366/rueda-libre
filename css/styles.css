@@ -13,7 +13,7 @@
 
   --espacios-sm: 0.5rem;
   --espacios-md: 1rem;
-  --espacios-lg: 2rem;
+  --espacios-lg: 3rem;
 }
 
 *,
@@ -28,10 +28,33 @@ body {
   font-family: var(--fuentes-texto);
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Tipografías y tamaños originales */
 h1, h2, h3 {
   font-family: var(--fuentes-titulos);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 img {
@@ -40,27 +63,36 @@ img {
   display: block;
 }
 
+/* Márgenes laterales para el contenido principal */
 main {
-  max-width: 75rem; 
+  max-width: 75rem;
   width: 90%;
-  margin: 0 auto;
-  padding: var(--espacios-lg);
+  margin: 2rem auto;
+  padding-left: var(--espacios-lg);
+  padding-right: var(--espacios-lg);
+  flex: 1;
+}
+
+section {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
 }
 
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN (VERSIÓN MÓVIL BASE: 1 COLUMNA)
+   2. ENCABEZADO Y NAVEGACIÓN
    ========================================= */
 header,
 #cabecera {
   background-color: var(--azul-noche);
   color: var(--crema);
-  padding: var(--espacios-md);
+  padding: var(--espacios-md) var(--espacios-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1rem;
+  width: 100%;
 }
 
 header h1 {
@@ -101,24 +133,16 @@ header h1 {
   outline-offset: 3px;
 }
 
-#menu li:hover {
-  transform: scale(1.05);
-}
-
 
 /* =========================================
-   3. SECCIONES Y TARJETAS (ESTILO BASE MÓVIL: 1 COLUMNA)
+   3. SECCIONES, PORTADA Y TARJETAS
    ========================================= */
-#inicio {
-  padding-top: var(--espacios-lg);
-  padding-bottom: var(--espacios-lg);
-}
-
 .portada-hero {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
   padding: 1rem 0;
   text-align: center;
 }
@@ -133,52 +157,7 @@ header h1 {
   gap: 1.5rem;
 }
 
-.flota-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.servicio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.5rem;
-  border: 3px solid var(--gris-asfalto);
-  border-radius: 12px;
-  background-color: var(--crema);
-}
-
-/* Ajuste corregido para que las imágenes se vean completas y uniformes */
-.servicio img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background-color: #ffffff;
-  padding: 10px;
-  display: block;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.servicio .precio {
-  font-weight: bold;
-  color: var(--verde-ruta);
-  margin: 0.5rem 0 1rem 0;
-}
-
-
-/* =========================================
-   GALERÍA DE RUTAS (MÓVIL BASE: 1 COLUMNA)
-   ========================================= */
-.galeria-rutas {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
+.servicio,
 .tarjeta-ruta {
   display: flex;
   flex-direction: column;
@@ -189,6 +168,16 @@ header h1 {
   background-color: var(--crema);
 }
 
+.servicio img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 .tarjeta-ruta img {
   width: 100%;
   height: 180px;
@@ -197,56 +186,29 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-.tarjeta-ruta .precio {
+.precio {
   font-weight: bold;
   color: var(--verde-ruta);
-  font-size: 1.1rem;
   margin: 0.5rem 0 1rem 0;
 }
 
 
 /* =========================================
-   LAYOUT DE RESERVAS (MÓVIL BASE: 1 COLUMNA)
-   ========================================= */
-.reservas-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.reservas-layout form {
-  max-width: 100%;
-  margin: 0;
-}
-
-.lateral-contacto {
-  background-color: var(--crema);
-  border: 2px solid var(--gris-asfalto);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.lateral-contacto ul {
-  padding-left: 1.2rem;
-}
-
-
-/* =========================================
-   4. TABLAS (Móvil base adaptado)
+   4. TABLAS
    ========================================= */
 .tabla,
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .tabla th,
 .tabla td,
 table th,
 table td {
-  padding: 0.6rem;
+  padding: 0.8rem;
   border: 1px solid var(--gris-asfalto);
   text-align: left;
 }
@@ -267,35 +229,8 @@ table tbody tr:nth-child(even) {
 /* =========================================
    5. BOTONES Y COMPONENTES
    ========================================= */
-.boton-primario,
-button,
+.btn-reserva,
 .btn {
-  background-color: var(--verde-ruta);
-  color: var(--crema);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.boton-secundario {
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-button:hover,
-.btn:hover {
-  background-color: var(--naranja-pedal);
-}
-
-.btn-reserva {
   background-color: var(--verde-ruta);
   color: var(--crema);
   padding: 0.7em 1.4em;
@@ -308,7 +243,8 @@ button:hover,
   text-align: center;
 }
 
-.btn-reserva:hover {
+.btn-reserva:hover,
+.btn:hover {
   background-color: var(--naranja-pedal);
   color: var(--azul-noche);
 }
@@ -320,12 +256,12 @@ button:hover,
 
 
 /* =========================================
-   6. FORMULARIOS (Móvil base)
+   6. FORMULARIOS
    ========================================= */
 form fieldset {
   border: 2px solid var(--gris-asfalto);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
   background-color: var(--crema);
 }
@@ -334,11 +270,6 @@ form legend {
   font-weight: bold;
   color: var(--azul-noche);
   padding: 0 0.5rem;
-}
-
-form div,
-form p {
-  margin-bottom: 1.2rem;
 }
 
 form label {
@@ -358,12 +289,6 @@ form textarea {
   color: var(--azul-noche);
 }
 
-form input[type="radio"],
-form input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5rem;
-}
-
 input:focus,
 select:focus,
 textarea:focus {
@@ -372,52 +297,47 @@ textarea:focus {
   border-color: var(--verde-ruta);
 }
 
-form button,
-form input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background-color: var(--verde-ruta);
-  color: var(--crema);
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.fila-campos {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.campo-corto {
-  flex: 1;
-}
-
 
 /* =========================================
-   7. PIE DE PÁGINA (MÓVIL BASE: 1 COLUMNA)
+   7. PIE DE PÁGINA (ANCHO 100% Y UNIFICADO)
    ========================================= */
 #pie {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  width: 100% !important;
+  max-width: 100% !important;
   background-color: var(--azul-noche);
   color: var(--crema);
-  padding: 2rem 1.5rem;
-  margin-top: 3rem;
+  padding: 2rem 4rem !important;
+  margin-top: 4rem !important;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-#pie table tbody tr:nth-child(even) {
-  background-color: transparent;
+#pie .row {
+  align-items: flex-start !important;
+  margin: 0 !important;
 }
 
+#pie h2, 
+#pie h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+#pie table {
+  margin: 0 !important;
+}
+
+/* Transparencia total en tablas y celdas del footer */
+#pie table,
+#pie table tbody,
+#pie table tr,
 #pie table td, 
 #pie table th {
-  border: 1px solid var(--gris-asfalto);
+  background-color: transparent !important;
+  color: var(--crema) !important;
+  border-color: var(--gris-asfalto);
 }
 
 #pie a {
@@ -449,18 +369,22 @@ form input[type="submit"] {
 }
 
 footer {
-  margin-bottom: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 
 /* =========================================
-   8. MEDIA QUERIES (TABLET Y ESCRITORIO - A PARTIR DE 768px)
+   8. MEDIA QUERIES (ADAPTACIÓN ESCRITORIO)
    ========================================= */
 @media (min-width: 768px) {
   header, #cabecera {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   #menu {
@@ -490,53 +414,11 @@ footer {
     flex: 1 1 300px;
   }
 
-/* ELIMINADO / REEMPLAZADO POR BOOTSTRAP GRID (MiniReto 7)
-.flota-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-*/
-
-/* NOTA: Esta regla se mantiene activa para las páginas paginas/tarifas.html 
-   y paginas/reservas.html, pero se sobreescribe en index.html usando Bootstrap */
-.servicio {
-    /* tus estilos de bordes, sombras o fuentes */
-}
-  .galeria-rutas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .reservas-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .fila-campos {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .tabla,
-  table {
-    font-size: 1rem;
-  }
-
-  .tabla th,
-  .tabla td,
-  table th,
-  table td {
-    padding: 1rem;
-  }
-
   #pie {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     align-items: start;
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 2rem 4rem !important;
   }
 }

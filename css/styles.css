@@ -150,12 +150,15 @@ header h1 {
   background-color: var(--crema);
 }
 
+/* Ajuste corregido para que las imágenes se vean completas y uniformes */
 .servicio img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 180px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 10px;
   display: block;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
@@ -383,7 +386,6 @@ form input[type="submit"] {
   margin-top: 1rem;
 }
 
-/* Fila de campos cortos en móvil: en columna por defecto */
 .fila-campos {
   display: flex;
   flex-direction: column;
@@ -427,7 +429,6 @@ form input[type="submit"] {
   text-decoration: underline;
 }
 
-/* Botón flotante de WhatsApp (Corregido con su punto) */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -456,7 +457,6 @@ footer {
    8. MEDIA QUERIES (TABLET Y ESCRITORIO - A PARTIR DE 768px)
    ========================================= */
 @media (min-width: 768px) {
-  /* Encabezado: recupera distribución horizontal */
   header, #cabecera {
     flex-direction: row;
     justify-content: space-between;
@@ -468,7 +468,6 @@ footer {
     gap: 1.5rem;
   }
 
-  /* Portada hero en dos columnas */
   .portada-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -481,7 +480,6 @@ footer {
     margin: 0;
   }
 
-  /* Servicios principales: se acomodan en fila */
   .servicios-principales {
     flex-direction: row;
     flex-wrap: wrap;
@@ -492,21 +490,18 @@ footer {
     flex: 1 1 300px;
   }
 
-  /* Flota de bicicletas en cuadrícula adaptable */
   .flota-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
   }
 
-  /* Galería de rutas en 3 columnas */
   .galeria-rutas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 
-  /* Layout de reservas en proporción 2:1 */
   .reservas-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -514,13 +509,11 @@ footer {
     align-items: start;
   }
 
-  /* Fila de campos cortos (documento y celular) lado a lado */
   .fila-campos {
     flex-direction: row;
     gap: 1rem;
   }
 
-  /* Tablas con tamaño normal en pantallas grandes */
   .tabla,
   table {
     font-size: 1rem;
@@ -533,7 +526,6 @@ footer {
     padding: 1rem;
   }
 
-  /* Pie de página en columnas organizadas */
   #pie {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

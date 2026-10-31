@@ -164,3 +164,20 @@ Registro de Problemas Responsive y Soluciones (Rueda Libre v1.5):
 3. Problema de legibilidad en tablas de tarifas (Móvil):
 - Descripción: La tabla de tarifas y precios de alquiler contenía demasiado relleno (padding) y un tamaño de fuente estándar de escritorio, lo que provocaba que se saliera de los márgenes en dispositivos móviles de 360 px.
 - Solución: Se ajustaron los estilos base de la tabla reduciendo el tamaño de la fuente a 0.9rem y compactando los márgenes internos (padding: 0.6rem), logrando que la tabla completa quepa de forma legible en el celular sin generar desplazamiento lateral.
+
+
+Comparativa Técnica: Flota en CSS Propio vs. Bootstrap 5 (MiniReto 5):
+
+1. Tiempo invertido y líneas de código:
+- Tiempo invertido: 12 minutos utilizando Bootstrap frente a los más de 40 minutos configurando el grid y las media queries manuales en CSS propio.
+- Líneas de CSS de distribución: 0 líneas escritas en la versión de Bootstrap (toda la distribución responsiva se resolvió mediante las clases utilitarias del framework en el HTML). En contraste, la versión propia requirió más de 30 líneas de CSS específicas para definir grids, flex y media queries.
+
+2. Clases usadas en Bootstrap:
+- Contenedor principal: container
+- Fila y separación: row g-4
+- Columnas responsivas por breakpoint: col-12 (móvil), col-sm-6 (tablet), col-lg-4 (escritorio), col-xl-3 (pantallas grandes).
+- Componentes de tarjeta: card, card-img-top, card-body, card-title, card-text.
+
+3. Ventajas y desventajas encontradas:
+- Lo que Bootstrap dio sin esfuerzo: Un sistema de grillas robusto y adaptable de manera inmediata con clases predefinidas, ahorrando tiempo de desarrollo y evitando escribir media queries manuales.
+- El control que se perdió: Se depende totalmente de la estructura y estilos predeterminados del framework, lo que limita la libertad creativa y obliga a sobrescribir clases si se desea un diseño completamente personalizado fuera de sus estándares.

@@ -46,7 +46,8 @@ h1, h2, h3 {
   font-family: var(--fuentes-titulos); /* Aplica Montserrat a todos los encabezados */
 }
 
-h1 { font-size: 2.5rem; }              /* Tamaño grande para el título principal */
+h1 { font-size: 2.5rem; 
+font-weight: 700;}              /* Tamaño grande para el título principal */
 h2 { 
   font-size: 2rem; 
   margin-top: 2.5rem;                  /* Espacio superior para separar de la sección anterior */

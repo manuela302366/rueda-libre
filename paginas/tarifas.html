@@ -1,197 +1,176 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Configuración de la codificación de caracteres y la adaptabilidad móvil -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tarifas y rutas - Rueda Libre</title>
+    
+    <!-- Enlaces a las fuentes de Google Fonts (Montserrat y Open Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Enlace a tu hoja de estilos CSS propia (subiendo un nivel con ../ porque estamos dentro de la carpeta 'paginas') -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
-    <!-- enlace flotante de whatsapp -->
+    <!-- Botón flotante fijo para contacto rápido por WhatsApp -->
     <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
 
-    <!-- menu de navegacion -->
-    <header id="cabecera" class="py-3 px-4">
+    <!-- Cabecera de navegación principal compartida -->
+    <header id="cabecera">
       <h1>Rueda Libre</h1>
       <nav>
+        <!-- Menú de enlaces de navegación entre las páginas del sitio -->
         <ul id="menu">
           <li><a href="../index.html">Inicio</a></li>
+          <!-- La clase 'activo' indica visualmente al usuario en qué página se encuentra -->
           <li><a href="tarifas.html" class="activo">Tarifas y rutas</a></li>
           <li><a href="reservas.html">Reservas</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="container my-5">
-      <!-- SECCIÓN 1: Tarifas e Información en 2 columnas desde pantallas grandes (lg) -->
-      <section class="mb-5">
-        <div class="row align-items-center g-4">
-          <!-- Columna 1: Información y texto -->
-          <div class="col-12 col-lg-5">
-            <h2>Tarifas</h2>
-            <p>Descubre nuestras tarifas competitivas para el alquiler de bicicletas en Medellín.</p>
-          </div>
-
-          <!-- Columna 2: Tabla de precios -->
-          <div class="col-12 col-lg-7">
-            <div class="table-responsive">
-              <table class="table table-bordered align-middle m-0">
-                <thead>
-                  <tr>
-                    <th>Tipo de bicicleta</th>
-                    <th>1 hora</th>
-                    <th>Medio día (4h)</th>
-                    <th>Día completo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Urbana</td>
-                    <td>$10.000</td>
-                    <td>$30.000</td>
-                    <td>$50.000</td>
-                  </tr>
-                  <tr>
-                    <td>Montaña</td>
-                    <td>$15.000</td>
-                    <td>$45.000</td>
-                    <td>$70.000</td>
-                  </tr>
-                  <tr>
-                    <td class="celda-electrica">
-                      Eléctrica <span class="etiqueta-nuevo badge bg-success">Nuevo</span>
-                    </td>
-                    <td>$25.000</td>
-                    <td>$70.000</td>
-                    <td>$110.000</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+    <!-- Contenido principal de la sección de tarifas y rutas -->
+    <main>
+      
+      <!-- SECCIÓN 1: Tabla de Tarifas de Alquiler -->
+      <section>
+        <h2>Tarifas</h2>
+        <p>Descubre nuestras tarifas competitivas para el alquiler de bicicletas en Medellín.</p>
+        
+        <!-- Tabla estructurada con filas y columnas de precios -->
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de bicicleta</th>
+              <th>1 hora</th>
+              <th>Medio día (4h)</th>
+              <th>Día completo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Urbana</td>
+              <td>$10.000</td>
+              <td>$30.000</td>
+              <td>$50.000</td>
+            </tr>
+            <tr>
+              <td>Montaña</td>
+              <td>$15.000</td>
+              <td>$45.000</td>
+              <td>$70.000</td>
+            </tr>
+            <tr>
+              <td>Eléctrica</td>
+              <td>$25.000</td>
+              <td>$70.000</td>
+              <td>$110.000</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <!-- SECCIÓN 2: Galería de Rutas Guiadas -->
-      <section id="recorridos" class="my-5">
-        <h2 class="mb-3">Nuestras rutas guiadas</h2>
-        <p class="mb-4">Explora Medellín y sus alrededores con nuestros recorridos especializados:</p>
+      <section id="recorridos">
+        <h2>Nuestras rutas guiadas</h2>
+        <p>Explora Medellín y sus alrededores con nuestros recorridos especializados:</p>
 
-        <div class="row g-4">
+        <!-- Contenedor flexible para alinear las tarjetas de rutas en fila -->
+        <div class="servicios-principales">
+          
           <!-- Ruta 1 -->
-          <div class="col-12 col-md-4">
-            <article class="tarjeta-ruta card h-100 shadow-sm border-0 p-3">
-              <img src="../img/rioyparques.avif" alt="Río y parques" class="card-img-top img-fluid rounded mb-3" style="height: 180px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold">Río y parques</h3>
-                <p class="mb-1"><strong>Distancia:</strong> 12 km</p>
-                <p class="mb-2"><strong>Duración:</strong> 2h | <strong>Nivel:</strong> Fácil</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$45.000</p>
-                <a href="reservas.html" class="btn btn-success btn-sm w-100">Reservar ruta</a>
-              </div>
-            </article>
-          </div>
+          <article class="tarjeta-ruta">
+            <img src="../img/rioyparques.avif" alt="Río y parques">
+            <h3>Río y parques</h3>
+            <p><strong>Distancia:</strong> 12 km</p>
+            <p><strong>Duración:</strong> 2h | <strong>Nivel:</strong> Fácil</p>
+            <p class="precio">$45.000</p>
+            <a href="reservas.html" class="btn">Reservar ruta</a>
+          </article>
 
           <!-- Ruta 2 -->
-          <div class="col-12 col-md-4">
-            <article class="tarjeta-ruta card h-100 shadow-sm border-0 p-3">
-              <img src="../img/saboresdebarrio.jpg" alt="Sabores de barrio" class="card-img-top img-fluid rounded mb-3" style="height: 180px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold">Sabores de barrio</h3>
-                <p class="mb-1"><strong>Distancia:</strong> 18 km</p>
-                <p class="mb-2"><strong>Duración:</strong> 3h | <strong>Nivel:</strong> Medio</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$60.000</p>
-                <a href="reservas.html" class="btn btn-success btn-sm w-100">Reservar ruta</a>
-              </div>
-            </article>
-          </div>
+          <article class="tarjeta-ruta">
+            <img src="../img/saboresdebarrio.jpg" alt="Sabores de barrio">
+            <h3>Sabores de barrio</h3>
+            <p><strong>Distancia:</strong> 18 km</p>
+            <p><strong>Duración:</strong> 3h | <strong>Nivel:</strong> Medio</p>
+            <p class="precio">$60.000</p>
+            <a href="reservas.html" class="btn">Reservar ruta</a>
+          </article>
 
           <!-- Ruta 3 -->
-          <div class="col-12 col-md-4">
-            <article class="tarjeta-ruta card h-100 shadow-sm border-0 p-3">
-              <img src="../img/retopalmas.webp" alt="Reto Las Palmas" class="card-img-top img-fluid rounded mb-3" style="height: 180px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold">Reto Las Palmas</h3>
-                <p class="mb-1"><strong>Distancia:</strong> 25 km</p>
-                <p class="mb-2"><strong>Duración:</strong> 4h | <strong>Nivel:</strong> Difícil</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$85.000</p>
-                <a href="reservas.html" class="btn btn-success btn-sm w-100">Reservar ruta</a>
-              </div>
-            </article>
-          </div>
+          <article class="tarjeta-ruta">
+            <img src="../img/retopalmas.webp" alt="Reto Las Palmas">
+            <h3>Reto Las Palmas</h3>
+            <p><strong>Distancia:</strong> 25 km</p>
+            <p><strong>Duración:</strong> 4h | <strong>Nivel:</strong> Difícil</p>
+            <p class="precio">$85.000</p>
+            <a href="reservas.html" class="btn">Reservar ruta</a>
+          </article>
+
         </div>
       </section>
 
-      <!-- Recomendaciones -->
-      <div class="row my-5 g-4 align-items-center">
-        <div class="col-12 col-md-7">
-          <p class="mb-0">
-            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a.m.
-          </p>
-        </div>
-        <div class="col-12 col-md-5">
-          <aside class="card p-3 bg-light border-0">
-            <h3 class="h6 fw-bold">Qué Llevar:</h3>
-            <ul class="mb-0 small">
-              <li>Ropa cómoda</li>
-              <li>Agua</li>
-              <li>Protector solar</li>
-              <li>Documento de identidad</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
+      <!-- SECCIÓN 3: Recomendaciones y qué llevar -->
+      <section>
+        <p>
+          Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a.m.
+        </p>
+        <aside>
+          <h3>Qué Llevar:</h3>
+          <ul>
+            <li>Ropa cómoda</li>
+            <li>Agua</li>
+            <li>Protector solar</li>
+            <li>Documento de identidad</li>
+          </ul>
+        </aside>
+      </section>
+
     </main>
 
-    <!-- PIE DE PÁGINA LIBRE (Ocupa el 100% del ancho de la pantalla) -->
+    <!-- Pie de página unificado del sitio -->
     <footer id="pie">
-      <div class="row g-4 w-100 m-0">
-        <div class="col-12 col-md-4">
-          <h2>Rueda Libre</h2>
-          <p class="small">&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
-        </div>
+      <div>
+        <h2>Rueda Libre</h2>
+        <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
+      </div>
 
-        <div class="col-12 col-md-4">
-          <h2>Contáctanos</h2>
-         <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <th>Número</th>
-                <td><a href="https://wa.me/57300000000">+57 320 000 0</a></td>
-              </tr>
-              <tr>
-                <th>Instagram</th>
-                <td><a href="https://instagram.com" target="_blank">Abrir</a></td>
-              </tr>
-              <tr>
-                <th>TikTok</th>
-                <td><a href="https://tiktok.com" target="_blank">Abrir</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div>
+        <h2>Contáctanos</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Número</th>
+              <td><a href="https://wa.me/57300000000">+57 320 000 0</a></td>
+            </tr>
+            <tr>
+              <th>Instagram</th>
+              <td><a href="https://instagram.com" target="_blank">Abrir</a></td>
+            </tr>
+            <tr>
+              <th>TikTok</th>
+              <td><a href="https://tiktok.com" target="_blank">Abrir</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="col-12 col-md-4">
-          <aside>
-            <h3>Horario de atención</h3>
-            <dl class="small mb-0">
-              <dt>Lunes a viernes</dt>
-              <dd>7:00 a.m. - 7:00 p.m.</dd>
-              <dt>Sábados, domingos y festivos</dt>
-              <dd>6:00 a.m. - 2:00 p.m.</dd>
-            </dl>
-          </aside>
-        </div>
+      <div>
+        <aside>
+          <h3>Horario de atención</h3>
+          <dl>
+            <dt>Lunes a viernes</dt>
+            <dd>7:00 a.m. - 7:00 p.m.</dd>
+            <dt>Sábados, domingos y festivos</dt>
+            <dd>6:00 a.m. - 2:00 p.m.</dd>
+          </dl>
+        </aside>
       </div>
     </footer>
-
-    <!-- Bootstrap 5 JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

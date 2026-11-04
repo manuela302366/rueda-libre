@@ -1,78 +1,83 @@
 /* =========================================
    1. CONFIGURACIÓN GLOBAL Y VARIABLES (:root)
    ========================================= */
+
+/* El selector :root representa la raíz del documento HTML (la etiqueta <html>). 
+   Aquí guardamos "variables personalizadas" (custom properties) con colores y 
+   medidas que reutilizaremos en todo el sitio web para mantener un diseño coherente. */
 :root {
-  --verde-ruta: #1e7a4f;
-  --naranja-pedal: #f39a2b;
-  --azul-noche: #14213d;
-  --crema: #faf6ef;
-  --gris-asfalto: #5b6470;
+  --verde-ruta: #1e7a4f;      /* Color principal ecológico de la marca */
+  --naranja-pedal: #f39a2b;   /* Color de acento para llamadas a la acción o contrastes */
+  --azul-noche: #14213d;      /* Color oscuro profundo para textos principales y cabeceras */
+  --crema: #faf6ef;           /* Color de fondo cálido y suave */
+  --gris-asfalto: #5b6470;    /* Color neutro para bordes y textos secundarios */
 
-  --fuentes-titulos: "Montserrat", sans-serif;
-  --fuentes-texto: "Open Sans", sans-serif;
+  --fuentes-titulos: "Montserrat", sans-serif; /* Tipografía moderna para títulos */
+  --fuentes-texto: "Open Sans", sans-serif;     /* Tipografía limpia y legible para párrafos */
 
-  --espacios-sm: 0.5rem;
-  --espacios-md: 1rem;
-  --espacios-lg: 3rem;
+  --espacios-sm: 0.5rem;      /* Variable de espacio pequeño (8px aprox) */
+  --espacios-md: 1rem;        /* Variable de espacio mediano (16px aprox) */
+  --espacios-lg: 3rem;        /* Variable de espacio grande (48px aprox) */
 }
 
+/* El selector universal (*) aplica estos estilos a TODOS los elementos de la página. 
+   'box-sizing: border-box' es vital: hace que los bordes y el relleno (padding) 
+   se incluyan dentro del ancho y alto total de la caja, evitando que se descuadren. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Estilos base que afectan a toda la estructura de la página (body) */
 body {
-  background-color: var(--crema);
-  color: var(--azul-noche);
-  font-family: var(--fuentes-texto);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background-color: var(--crema);     /* Aplica el color de fondo crema definido arriba */
+  color: var(--azul-noche);          /* Establece el color por defecto para las letras */
+  font-family: var(--fuentes-texto); /* Define la tipografía general de lectura */
+  margin: 0;                         /* Elimina el margen exterior que los navegadores traen por defecto */
+  padding: 0;                        /* Elimina el relleno por defecto del navegador */
+  display: flex;                     /* Convierte el body en un contenedor flexible (Flexbox) */
+  flex-direction: column;            /* Organiza los elementos principales de arriba hacia abajo (en columna) */
+  min-height: 100vh;                 /* Fuerza a que el body ocupe como mínimo el 100% de la altura visible de la pantalla */
 }
 
-/* Tipografías y tamaños originales */
+/* Tipografías y tamaños predeterminados para los títulos */
 h1, h2, h3 {
-  font-family: var(--fuentes-titulos);
+  font-family: var(--fuentes-titulos); /* Aplica Montserrat a todos los encabezados */
 }
 
-h1 {
-  font-size: 2.5rem;
+h1 { font-size: 2.5rem; }              /* Tamaño grande para el título principal */
+h2 { 
+  font-size: 2rem; 
+  margin-top: 2.5rem;                  /* Espacio superior para separar de la sección anterior */
+  margin-bottom: 1rem;                 /* Espacio inferior para separar del contenido de abajo */
 }
+h3 { font-size: 1.5rem; }
 
-h2 {
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
+/* Estilo general para los párrafos de texto */
 p {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.6;                    /* Altura de línea para mejorar la legibilidad y que no se amontone el texto */
 }
 
+/* Propiedades globales para todas las imágenes */
 img {
-  max-width: 100%;
-  border-radius: 10px;
-  display: block;
+  max-width: 100%;                     /* Impide que la imagen se desborde de su contenedor padre */
+  border-radius: 10px;                 /* Redondea las esquinas de todas las imágenes */
+  display: block;                      /* Convierte la imagen en bloque para evitar espacios fantasma abajo */
 }
 
-/* Márgenes laterales para el contenido principal */
+/* Configuración de la caja principal de contenido (main) */
 main {
-  max-width: 75rem;
-  width: 90%;
-  margin: 2rem auto;
-  padding-left: var(--espacios-lg);
-  padding-right: var(--espacios-lg);
-  flex: 1;
+  max-width: 75rem;                    /* Limita el ancho máximo para que en pantallas gigantes no se estire de más */
+  width: 90%;                          /* En pantallas pequeñas ocupa el 90% dejando un 10% de margen lateral */
+  margin: 2rem auto;                   /* Centra la etiqueta main horizontalmente ('auto') y da espacio arriba/abajo */
+  padding-left: var(--espacios-lg);    /* Relleno interior izquierdo utilizando la variable */
+  padding-right: var(--espacios-lg);   /* Relleno interior derecho */
+  flex: 1;                             /* Hace que el main crezca y empuje el footer siempre hacia el fondo de la pantalla */
 }
 
+/* Separación vertical estándar entre cada sección de la página */
 section {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
@@ -80,84 +85,99 @@ section {
 
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN
+   2. ENCABEZADO Y NAVEGACIÓN (Flexbox)
    ========================================= */
+
+/* Estilo para la barra de navegación superior (header o #cabecera) */
 header,
 #cabecera {
-  background-color: var(--azul-noche);
-  color: var(--crema);
-  padding: var(--espacios-md) var(--espacios-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  width: 100%;
+  background-color: var(--azul-noche); /* Fondo azul oscuro corporativo */
+  color: var(--crema);                 /* Color de texto claro */
+  padding: var(--espacios-md) var(--espacios-lg); /* Espaciado interno superior/inferior y lateral */
+  display: flex;                       /* Activa Flexbox para acomodar sus elementos internos */
+  flex-direction: column;              /* En celulares, coloca el título y el menú en columna (uno debajo de otro) */
+  align-items: center;                 /* Centra horizontalmente los elementos dentro del header */
+  text-align: center;                  /* Centra el texto */
+  gap: 1rem;                           /* Espacio de separación automático entre el título y el menú */
+  width: 100%;                         /* Ocupa todo el ancho de la pantalla */
 }
 
+/* Estilo específico para el título principal dentro del encabezado */
 header h1 {
-  margin: 0;
-  color: var(--naranja-pedal);
+  margin: 0;                           /* Elimina los márgenes predeterminados del h1 */
+  color: var(--naranja-pedal);         /* Pinta el título con el color naranja de acento */
 }
 
+/* Estilo para la lista desordenada que conforma el menú de navegación */
 #menu {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  gap: 0.8rem;
+  display: flex;                       /* Convierte la lista en un contenedor flexible */
+  flex-direction: column;              /* En móvil, los enlaces del menú van apilados verticalmente */
+  list-style: none;                    /* Elimina los puntos o viñetas típicas de las listas */
+  gap: 0.8rem;                         /* Espacio entre cada opción del menú */
   margin: 0;
   padding: 0;
   align-items: center;
 }
 
+/* Estilo para los enlaces de texto dentro del menú */
 #menu a {
-  color: var(--gris-asfalto);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 0.8rem;
+  color: var(--gris-asfalto);          /* Color gris para las opciones inactivas */
+  text-decoration: none;               /* Quita la línea subrayada por defecto de los enlaces */
+  font-weight: bold;                   /* Pone el texto en negrita */
+  padding: 0.5rem 0.8rem;              /* Da área de clic cómoda alrededor de la palabra */
 }
 
+/* Estilo para el enlace que representa la página actual (clase .activo) */
 #menu a.activo {
-  color: var(--verde-ruta);
+  color: var(--verde-ruta);            /* Destaca la opción activa con el verde corporativo */
   font-weight: 600;
 }
 
+/* Efecto visual al pasar el cursor por encima de los enlaces del menú */
 #menu a:hover {
-  color: var(--naranja-pedal);
-  text-decoration: underline;
-}
-
-#menu a:focus {
-  color: var(--naranja-pedal);
-  outline: 2px solid var(--naranja-pedal);
-  outline-offset: 3px;
+  color: var(--naranja-pedal);         /* Cambia el color del texto a naranja */
+  text-decoration: underline;          /* Vuelve a subrayar sutilmente al pasar el mouse */
 }
 
 
 /* =========================================
-   3. SECCIONES, PORTADA Y TARJETAS
+   3. SECCIONES, PORTADA Y TARJETAS (CSS Grid)
    ========================================= */
+
+/* Contenedor de la sección de portada (Hero) en dispositivos móviles */
 .portada-hero {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: column;              /* Apila el texto y la imagen verticalmente */
+  gap: 2rem;                           /* Espacio de separación entre el texto y la foto */
   margin-top: 1.5rem;
   margin-bottom: 3rem;
-  padding: 1rem 0;
-  text-align: center;
+  text-align: center;                  /* Centra el texto en celulares */
 }
 
+/* Centra el botón de la portada cuando está en versión móvil */
 .portada-hero .btn-reserva {
   margin: 0 auto;
 }
 
+/* Contenedor en cuadrícula (Grid) para alinear las tarjetas de servicios y flota en móvil */
 .servicios-principales {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;          /* Una sola columna fluida en celulares */
+  gap: 1.5rem;                         /* Espacio vertical entre cada tarjeta */
 }
 
-.servicio,
+/* Estilo individual para las tarjetas de servicios */
+.servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;      /* Distribuye el contenido interno uniformemente */
+  padding: 1.5rem;                     /* Relleno interior de la tarjeta */
+  border: 3px solid var(--gris-asfalto); /* Marco exterior con el color gris asfalto */
+  border-radius: 12px;                 /* Bordes redondeados de la tarjeta */
+  background-color: var(--crema);      /* Fondo interior de la tarjeta */
+}
+
+/* Estilo individual para las tarjetas de rutas */
 .tarjeta-ruta {
   display: flex;
   flex-direction: column;
@@ -168,27 +188,24 @@ header h1 {
   background-color: var(--crema);
 }
 
-.servicio img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background-color: #ffffff;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
+/* CORRECCIÓN DE TAMAÑO DE IMÁGENES: 
+   Fuerza una altura idéntica de 180px para todas las imágenes de servicios y rutas, 
+   y 'object-fit: cover' recorta sutilmente los sobrantes para que ninguna se deforme. */
+.servicio img,
 .tarjeta-ruta img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
+/* Estilo para resaltar los precios en las tarjetas */
 .precio {
   font-weight: bold;
-  color: var(--verde-ruta);
+  color: var(--verde-ruta);            /* Color verde para el texto del precio */
   margin: 0.5rem 0 1rem 0;
 }
 
@@ -196,229 +213,144 @@ header h1 {
 /* =========================================
    4. TABLAS
    ========================================= */
-.tabla,
+
+/* Estructura general de las tablas de precios o información */
 table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%;                         /* Ocupa todo el ancho disponible */
+  border-collapse: collapse;           /* Une los bordes dobles de las celdas en una sola línea limpia */
   margin: 1.5rem 0;
   font-size: 1rem;
 }
 
-.tabla th,
-.tabla td,
+/* Estilo para las celdas de encabezado (th) y datos (td) */
 table th,
 table td {
-  padding: 0.8rem;
-  border: 1px solid var(--gris-asfalto);
-  text-align: left;
+  padding: 0.8rem;                     /* Espacio interno dentro de cada celda */
+  border: 1px solid var(--gris-asfalto); /* Borde individual para cada celda */
+  text-align: left;                    /* Alinea el texto a la izquierda */
 }
 
-.tabla thead th,
+/* Estilo exclusivo para la fila de cabecera de la tabla (thead) */
 table thead th {
-  background-color: var(--azul-noche);
-  color: var(--crema);
+  background-color: var(--azul-noche); /* Fondo oscuro corporativo */
+  color: var(--crema);                 /* Texto claro */
   font-weight: bold;
-}
-
-.tabla tbody tr:nth-child(even),
-table tbody tr:nth-child(even) {
-  background-color: var(--crema);
 }
 
 
 /* =========================================
    5. BOTONES Y COMPONENTES
    ========================================= */
+
+/* Estilo base compartido para los botones de reserva y clases .btn */
 .btn-reserva,
 .btn {
-  background-color: var(--verde-ruta);
-  color: var(--crema);
-  padding: 0.7em 1.4em;
-  border-radius: 999px;
-  text-decoration: none;
+  background-color: var(--verde-ruta); /* Fondo verde corporativo */
+  color: var(--crema);                 /* Texto claro */
+  padding: 0.7em 1.4em;                /* Relleno interior proporcional al tamaño de la letra */
+  border-radius: 999px;                /* Valor alto para redondear completamente los bordes tipo píldora */
+  text-decoration: none;               /* Quita el subrayado si es un enlace convertido en botón */
   font-weight: 600;
   display: inline-block;
   border: none;
-  cursor: pointer;
+  cursor: pointer;                     /* Cambia el cursor a manito al pasar por encima */
   text-align: center;
 }
 
+/* Efecto visual al pasar el cursor sobre los botones */
 .btn-reserva:hover,
 .btn:hover {
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-}
-
-.btn-reserva:focus {
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
+  background-color: var(--naranja-pedal); /* Cambia el fondo a naranja al hacer hover */
+  color: var(--azul-noche);            /* Cambia el color del texto a azul oscuro para buen contraste */
 }
 
 
 /* =========================================
-   6. FORMULARIOS
+   6. PIE DE PÁGINA (Footer) y BOTÓN FLOTANTE
    ========================================= */
-form fieldset {
-  border: 2px solid var(--gris-asfalto);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--crema);
-}
 
-form legend {
-  font-weight: bold;
-  color: var(--azul-noche);
-  padding: 0 0.5rem;
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 8px;
-  background-color: var(--crema);
-  color: var(--azul-noche);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--verde-ruta);
-  outline-offset: 2px;
-  border-color: var(--verde-ruta);
-}
-
-
-/* =========================================
-   7. PIE DE PÁGINA (ANCHO 100% Y UNIFICADO)
-   ========================================= */
+/* Estilo para el contenedor del pie de página en móvil */
 #pie {
-  width: 100% !important;
-  max-width: 100% !important;
-  background-color: var(--azul-noche);
-  color: var(--crema);
-  padding: 2rem 4rem !important;
-  margin-top: 4rem !important;
-  margin-bottom: 0;
+  width: 100%;
+  background-color: var(--azul-noche); /* Fondo azul oscuro */
+  color: var(--crema);                 /* Texto claro */
+  padding: 2rem 4rem;                  /* Relleno interior generoso */
+  margin-top: 4rem;                    /* Separa el footer del contenido anterior */
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-direction: column;              /* Apila las columnas del footer en dispositivos móviles */
+  gap: 1.5rem;                         /* Espacio entre los bloques del footer */
 }
 
-#pie .row {
-  align-items: flex-start !important;
-  margin: 0 !important;
-}
-
-#pie h2, 
-#pie h3 {
-  margin-top: 0 !important;
-  margin-bottom: 0.8rem !important;
-}
-
-#pie table {
-  margin: 0 !important;
-}
-
-/* Transparencia total en tablas y celdas del footer */
-#pie table,
-#pie table tbody,
-#pie table tr,
-#pie table td, 
-#pie table th {
-  background-color: transparent !important;
-  color: var(--crema) !important;
-  border-color: var(--gris-asfalto);
-}
-
-#pie a {
-  color: var(--naranja-pedal);
-  text-decoration: none;
-}
-
-#pie a:hover {
-  text-decoration: underline;
-}
-
+/* Estilo para el botón flotante de WhatsApp */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--verde-ruta);
-  color: var(--crema);
+  position: fixed;                     /* Lo fija en la pantalla para que no se mueva al hacer scroll */
+  bottom: 20px;                        /* Distancia fija desde el borde inferior */
+  right: 20px;                         /* Distancia fija desde el borde derecho */
+  background-color: var(--verde-ruta); /* Fondo verde */
+  color: var(--crema);                 /* Texto claro */
   padding: 10px 15px;
-  border-radius: 50px;
+  border-radius: 50px;                 /* Forma redondeada flotante */
   text-decoration: none;
   font-weight: bold;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.whatsapp:hover {
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-}
-
-footer {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  z-index: 1000;                       /* Asegura que flote por encima de cualquier otro elemento de la página */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para dar efecto de relieve */
 }
 
 
 /* =========================================
-   8. MEDIA QUERIES (ADAPTACIÓN ESCRITORIO)
+   7. MEDIA QUERIES (Adaptación para Escritorio)
    ========================================= */
+
+/* Esta regla '@media' se activa automáticamente cuando la pantalla tiene un ancho 
+   mínimo de 768px (tablets y computadoras). Aquí transformamos el diseño móvil 
+   en un diseño amplio y horizontal. */
 @media (min-width: 768px) {
+
+  /* Transforma la cabecera de columna a fila horizontal */
   header, #cabecera {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row;               /* Coloca el título a la izquierda y el menú a la derecha */
+    justify-content: space-between;    /* Separa ambos extremos al máximo */
     text-align: left;
     padding-left: 3rem;
     padding-right: 3rem;
   }
 
+  /* Pone los enlaces del menú en fila horizontal */
   #menu {
     flex-direction: row;
     gap: 1.5rem;
   }
 
+  /* Convierte la portada (Hero) en una cuadrícula (Grid) de 2 columnas iguales */
   .portada-hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;    /* Dos columnas de igual proporción (texto izq, foto der) */
+    align-items: center;               /* Centra verticalmente los elementos de la cuadrícula */
     gap: 3rem;
     text-align: left;
   }
 
   .portada-hero .btn-reserva {
-    margin: 0;
+    margin: 0;                         /* Quita el centrado automático del botón en escritorio */
   }
 
+  /* Organiza las tarjetas de servicios y flota en un máximo de 3 columnas en PC. 
+     Las tarjetas impares (como la tarjeta 7) bajan a la siguiente fila manteniendo 
+     exactamente el mismo tamaño sin estirarse a lo ancho de la pantalla. */
   .servicios-principales {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas proporcionales */
+    gap: 2rem;                             /* Espaciado limpio horizontal y vertical */
   }
 
-  .servicios-principales .servicio {
-    flex: 1 1 300px;
-  }
-
+  /* CORRECCIÓN DEL PIE DE PÁGINA: 
+     Convierte el footer en una cuadrícula exacta de 3 columnas para PC 
+     (marca, contáctanos y horario de atención alineados horizontalmente). */
   #pie {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     align-items: start;
     gap: 2rem;
-    padding: 2rem 4rem !important;
+    padding: 2rem 4rem;
   }
 }

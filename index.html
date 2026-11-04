@@ -1,33 +1,31 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Configuración de la codificación de caracteres y la adaptabilidad para celulares -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-    <!-- fuentes de google -->
+    
+    <!-- Enlaces a las fuentes de Google Fonts (Montserrat para títulos y Open Sans para texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- mis estilos -->
-     
-<!-- 1. Bootstrap CSS (Primero) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- 2. Tu hoja de estilos propia (DESPUÉS de Bootstrap) -->
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-
-
+    
+    <!-- Enlace a tu única hoja de estilos propia -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
   <body>
-    <!-- el boton flotante de whatsapp para que quede siempre visible -->
+    <!-- Botón flotante de WhatsApp situado de manera fija en la esquina inferior derecha -->
     <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a> 
 
-    <!-- barra de navegacion principal de la pagina con flexbox -->
+    <!-- Cabecera principal del sitio web con Flexbox -->
     <header id="cabecera">
       <h1>Rueda Libre</h1>
       <nav>
+        <!-- Menú de navegación principal entre páginas -->
         <ul id="menu">
+          <!-- La clase 'activo' marca visualmente la página en la que nos encontramos -->
           <li><a href="index.html" class="activo">Inicio</a></li>
           <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
           <li><a href="paginas/reservas.html">Reservas</a></li>
@@ -35,20 +33,22 @@
       </nav>
     </header>
 
-    <!-- aqui arranca todo el contenido fuerte de la pagina de inicio -->
+    <!-- Contenido principal de la página de inicio -->
     <main>
-      <!-- PASO 1: Portada hero en dos columnas con Grid (texto a la izquierda, foto a la derecha, centrado vertical) -->
-    <!-- PASO 1: Portada hero usando tu CSS grid original combinada con columnas -->
+      
+      <!-- SECCIÓN 1: Portada Hero en dos columnas (texto e imagen) -->
       <section class="portada-hero">
-        <div class="portada-texto col-12 col-md-6">
+        <div class="portada-texto">
           <h2>Rueda Libre en Medellín</h2>
           <p>Alquiler de bicicletas y recorridos guiados por toda la ciudad de forma sostenible.</p>
           <a href="#encuentranos" class="btn-reserva">Encuéntranos</a>
         </div>
-        <div class="portada-imagen col-12 col-md-6 text-center">
-          <img src="./img/images.jpeg" alt="portada de Rueda Libre" width="400" class="img-fluid" />
+        <div class="portada-imagen">
+          <img src="./img/images.jpeg" alt="Portada de Rueda Libre" width="400" />
         </div>
       </section>
+
+      <!-- SECCIÓN 2: ¿Quiénes somos? -->
       <section>
         <h2>¿Quiénes somos?</h2>
         <p>
@@ -57,16 +57,15 @@
           bicicletas en Medellín, permitiendo a nuestros clientes disfrutar de la
           ciudad desde una perspectiva diferente y ecológica.
         </p>
-        
-        <img src="./img/bicicleta.jpg" alt="bicicletas de Rueda Libre" width="400">
+        <img src="./img/bicicleta.jpg" alt="Bicicletas de Rueda Libre" width="400">
       </section>
 
-      <!-- SECCIÓN 1: Los tres servicios principales en horizontal (en PC) -->
+      <!-- SECCIÓN 3: Nuestros Servicios Principales -->
       <section id="inicio">
         <h2>Nuestros Servicios</h2>
         <p>En Rueda Libre, ofrecemos una variedad de servicios para satisfacer tus necesidades de movilidad:</p>
 
-        <!-- Contenedor flex para alinear los 3 servicios principales en fila -->
+        <!-- Contenedor flexible para alinear los servicios -->
         <div class="servicios-principales">
           <article class="servicio">
             <img src="img/alquiler.jpg" alt="Alquiler" width="400"/>
@@ -88,121 +87,81 @@
         </div>
       </section>
 
-      <!-- SECCIÓN 2: La nueva flota de 7 modelos en cuadrícula (Grid) abajo -->
-      
-<!-- SECCIÓN 2: La nueva flota de 7 modelos en cuadrícula (Grid) abajo -->
-      
-
-
-<!-- SECCIÓN 2: La nueva flota de 7 modelos limpia con Bootstrap -->
-      <section class="container my-5">
+      <!-- SECCIÓN 4: Nuestra Flota (Las 7 tarjetas completas) -->
+      <section>
         <h2>Nuestra Flota</h2>
         <p>Conoce los modelos disponibles para alquilar y recorrer Medellín a tu ritmo:</p>
 
-        <div class="row g-4">
+        <!-- Contenedor flexible para ordenar las tarjetas de la flota -->
+        <div class="servicios-principales">
+          
           <!-- Tarjeta 1 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/urbanaclasica.jpg" alt="Urbana Clásica" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Urbana Clásica</h3>
-                <p class="text-muted small">Cómoda y liviana para las ciclorrutas.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$10.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/urbanaclasica.jpg" alt="Urbana Clásica">
+            <h3>Urbana Clásica</h3>
+            <p>Cómoda y liviana para las ciclorrutas.</p>
+            <p class="precio">$10.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 2 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/urbanaplegable.jpg" alt="Urbana Plegable" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Urbana Plegable</h3>
-                <p class="text-muted small">Se dobla en segundos; ideal para combinar con el metro.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$12.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/urbanaplegable.jpg" alt="Urbana Plegable">
+            <h3>Urbana Plegable</h3>
+            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+            <p class="precio">$12.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 3 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/montañatrail.webp" alt="Montaña Trail" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Montaña Trail</h3>
-                <p class="text-muted small">Suspensión delantera y 21 cambios para las subidas.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$15.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/montañatrail.webp" alt="Montaña Trail">
+            <h3>Montaña Trail</h3>
+            <p>Suspensión delantera y 21 cambios para las subidas.</p>
+            <p class="precio">$15.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 4 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/bicicletagravel.jpg" alt="Gravel Aventura" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Gravel Aventura</h3>
-                <p class="text-muted small">Para rutas mixtas de asfalto y destapado.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$18.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/bicicletagravel.jpg" alt="Gravel Aventura">
+            <h3>Gravel Aventura</h3>
+            <p>Para rutas mixtas de asfalto y destapado.</p>
+            <p class="precio">$18.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 5 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/electricaurbana.webp" alt="Eléctrica Urbana" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Eléctrica Urbana</h3>
-                <p class="text-muted small">Asistencia eléctrica con 45 km de autonomía.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$25.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/electricaurbana.webp" alt="Eléctrica Urbana">
+            <h3>Eléctrica Urbana</h3>
+            <p>Asistencia eléctrica con 45 km de autonomía.</p>
+            <p class="precio">$25.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 6 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/infantil.webp" alt="Infantil" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Infantil</h3>
-                <p class="text-muted small">Para niños de 6 a 10 años.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$8.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/infantil.webp" alt="Infantil">
+            <h3>Infantil</h3>
+            <p>Para niños de 6 a 10 años.</p>
+            <p class="precio">$8.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
 
           <!-- Tarjeta 7 -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0 p-3">
-              <img src="img/tandem.jpg" alt="Tándem" class="card-img-top img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-              <div class="card-body d-flex flex-column p-0">
-                <h3 class="h5 fw-bold text-dark">Tándem</h3>
-                <p class="text-muted small">Para dos personas; perfecta para pasear en pareja.</p>
-                <p class="precio fw-bold text-success mt-auto mb-3">$20.000 / hora</p>
-                <a href="paginas/reservas.html" class="btn btn-success btn-sm w-100">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <article class="servicio">
+            <img src="img/tandem.jpg" alt="Tándem">
+            <h3>Tándem</h3>
+            <p>Para dos personas; perfecta para pasear en pareja.</p>
+            <p class="precio">$20.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn">Reservar</a>
+          </article>
+
         </div>
       </section>
 
-
-
-
-
-
-
-
-
-
-      <!-- los pasos rapidos para que la gente sepa que hacer -->
+      <!-- SECCIÓN 5: ¿Cómo alquilar? (Pasos y guía rápida) -->
       <section>
         <h3>¿Cómo alquilar?</h3>
         <p>Para alquilar una bicicleta, simplemente:</p>
@@ -212,15 +171,13 @@
           <li>Presenta tu identificación y realiza el depósito.</li>
           <li>Firma el contrato de alquiler.</li>
         </ol>
-        
         <br />
         <a href="paginas/reservas.html" class="btn-reserva">Reservar ahora</a>
         <br /><br />
-        
-        <img src="./img/encuentra.jpg" alt="bicicletas de Rueda Libre" width="100" />
+        <img src="./img/encuentra.jpg" alt="Tienda Rueda Libre" width="100" />
       </section>
 
-      <!-- la seccion final con el mapa y el correo -->
+      <!-- SECCIÓN 6: Encuéntranos (Ubicación y contacto) -->
       <section id="encuentranos">
         <h3>Encuéntranos</h3>
         <p>Ubicación en Medellín, Antioquia</p>
@@ -232,7 +189,7 @@
 
     <hr>
     
-    <!-- Pie de página unificado en tres columnas -->
+    <!-- Pie de página (Footer) unificado del sitio -->
     <footer id="pie">
       <div>
         <h2>Rueda Libre</h2>
@@ -271,7 +228,5 @@
         </aside>
       </div>
     </footer>
- <!-- Bootstrap JS Bundle (Justo antes de cerrar body) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

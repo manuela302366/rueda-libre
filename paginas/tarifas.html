@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarifas y rutas - Rueda Libre</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    
+
+    <!-- Bootstrap 5.3 CSS por CDN (Base de componentes y grillas) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+
+
+
+
+
+    
+    <!-- Tu hoja de estilos personalizada -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Botón flotante fijo para WhatsApp -->
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank">WhatsApp</a>
+<header id="cabecera" class="p-0">
+  <nav class="navbar navbar-expand-lg px-4 py-3 w-100" style="background-color: var(--azul-noche);">
+    <div class="container-fluid p-0">
+      
+      <!-- Logo en Naranja Pedal -->
+      <a class="navbar-brand fw-bold fs-2 m-0 p-0" href="../index.html" style="color: var(--naranja-pedal); font-family: var(--fuentes-titulos);">Rueda Libre</a>
+
+      <!-- Botón Hamburguesa -->
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="filter: invert(1);">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú colapsable con "Tarifas y rutas" activo -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul id="menu" class="navbar-nav align-items-lg-center gap-lg-4 gap-2 mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fw-bold p-0" href="../index.html" style="color: var(--gris-asfalto) !important;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold p-0" aria-current="page" href="tarifas.html" style="color: var(--verde-ruta) !important;">Tarifas y rutas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold p-0" href="reservas.html" style="color: var(--gris-asfalto) !important;">Reservas</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+    <!-- Contenido principal dentro de un container de Bootstrap -->
+    <main class="container my-4">
+      
+      <!-- Fila principal con sistema de grilla (2 columnas desde LG) -->
+      <div class="row g-4">
+        
+        <!-- COLUMNA PRINCIPAL (Tarifas + Rutas) -> Ocupa 8 columnas en LG -->
+        <div class="col-12 col-lg-8">
+          
+          <!-- SECCIÓN 1: Tabla de Tarifas -->
+          <section class="mb-5">
+            <h2>Tarifas</h2>
+            <p>Descubre nuestras tarifas competitivas para el alquiler de bicicletas en Medellín.</p>
+            
+            <!-- Conserva los estilos propios de tu tabla -->
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tipo de bicicleta</th>
+                    <th>1 hora</th>
+                    <th>Medio día (4h)</th>
+                    <th>Día completo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Urbana</td>
+                    <td>$10.000</td>
+                    <td>$30.000</td>
+                    <td>$50.000</td>
+                  </tr>
+                  <tr>
+                    <td>Montaña</td>
+                    <td>$15.000</td>
+                    <td>$45.000</td>
+                    <td>$70.000</td>
+                  </tr>
+                  <tr>
+                    <td>Eléctrica</td>
+                    <td>$25.000</td>
+                    <td>$70.000</td>
+                    <td>$110.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+  
+
+<!-- SECCIÓN 2: Galería de Rutas Guiadas (Convertida a Cards de Bootstrap) -->
+          <section id="recorridos">
+            <h2 class="mb-3">Nuestras rutas guiadas</h2>
+            <p class="text-muted mb-4">Explora Medellín y sus alrededores con nuestros recorridos especializados:</p>
+
+            <!-- Sistema de grillas de Bootstrap con gutters -->
+            <div class="row g-4">
+              
+              <!-- Ruta 1: Río y parques -->
+              <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                  <img src="../img/rioyparques.avif" class="card-img-top bg-white p-2" alt="Río y parques" style="height: 180px; object-fit: cover;">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                      <h3 class="card-title h5 text-dark">Río y parques</h3>
+                      <p class="card-text text-muted small mb-1"><strong>Distancia:</strong> 12 km</p>
+                      <p class="card-text text-muted small mb-2"><strong>Duración:</strong> 2h | <strong>Nivel:</strong> Fácil</p>
+                    </div>
+                    <div>
+                      <p class="fw-bold text-success mb-2">$45.000</p>
+                      <a href="reservas.html" class="btn btn-success w-100">Reservar ruta</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ruta 2: Sabores de barrio -->
+              <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                  <img src="../img/saboresdebarrio.jpg" class="card-img-top bg-white p-2" alt="Sabores de barrio" style="height: 180px; object-fit: cover;">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                      <h3 class="card-title h5 text-dark">Sabores de barrio</h3>
+                      <p class="card-text text-muted small mb-1"><strong>Distancia:</strong> 18 km</p>
+                      <p class="card-text text-muted small mb-2"><strong>Duración:</strong> 3h | <strong>Nivel:</strong> Medio</p>
+                    </div>
+                    <div>
+                      <p class="fw-bold text-success mb-2">$60.000</p>
+                      <a href="reservas.html" class="btn btn-success w-100">Reservar ruta</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ruta 3: Reto Las Palmas -->
+              <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                  <img src="../img/retopalmas.webp" class="card-img-top bg-white p-2" alt="Reto Las Palmas" style="height: 180px; object-fit: cover;">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                      <h3 class="card-title h5 text-dark">Reto Las Palmas</h3>
+                      <p class="card-text text-muted small mb-1"><strong>Distancia:</strong> 25 km</p>
+                      <p class="card-text text-muted small mb-2"><strong>Duración:</strong> 4h | <strong>Nivel:</strong> Difícil</p>
+                    </div>
+                    <div>
+                      <p class="fw-bold text-success mb-2">$85.000</p>
+                      <a href="reservas.html" class="btn btn-success w-100">Reservar ruta</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        
+
+
+
+        <!-- COLUMNA COMPLEMENTARIA -> Ocupa 4 columnas en LG -->
+        <div class="col-12 col-lg-12">
+          <section class="p-3 bg-light rounded border">
+            <h3>Información importante</h3>
+            <p>
+              Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a.m.
+            </p>
+            <aside>
+              <h4>Qué Llevar:</h4>
+              <ul>
+                <li>Ropa cómoda</li>
+                <li>Agua</li>
+                <li>Protector solar</li>
+                <li>Documento de identidad</li>
+              </ul>
+            </aside>
+          </section>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="pie">
+      <div>
+        <h2>Rueda Libre</h2>
+        <p>&copy; Rueda Libre | hola@ruedalibre.example | 2026</p>
+      </div>
+
+      <div>
+        <h2>Contáctanos</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Número</th>
+              <td><a href="https://wa.me/57300000000">+57 320 000 0</a></td>
+            </tr>
+            <tr>
+              <th>Instagram</th>
+              <td><a href="https://instagram.com" target="_blank">Abrir</a></td>
+            </tr>
+            <tr>
+              <th>TikTok</th>
+              <td><a href="https://tiktok.com" target="_blank">Abrir</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <aside>
+          <h3>Horario de atención</h3>
+          <dl>
+            <dt>Lunes a viernes</dt>
+            <dd>7:00 a.m. - 7:00 p.m.</dd>
+            <dt>Sábados, domingos y festivos</dt>
+            <dd>6:00 a.m. - 2:00 p.m.</dd>
+          </dl>
+        </aside>
+      </div>
+    </footer>
+
+    <!-- JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
